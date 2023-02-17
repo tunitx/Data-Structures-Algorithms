@@ -87,6 +87,9 @@ class Node{
 }
 */
 
+//try maintaining two subsequent lists, one of even nodes and one of odd ones
+// maintain 4 nodes, evenStart, evenEnd, oddStart and oddEnd.
+//change them appropriately and then join EE and OS.
 class Solution{
     Node divide(int N, Node head){
         // code here
