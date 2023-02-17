@@ -75,32 +75,37 @@ class Node
 
 class Solution
 {
+    
+    
+    // dont look at the code straight in the future while revising, it is tough 
+    //to understand the logic in one go, just see page number 101 in dsa ref copy
+    //try understanding the logic by breaking the reversing part cuz u sucked there
+    //the last time u solved this problem on 17th feb, 2023.
     public static Node reverse(Node head, int k)
     {
         //Your code here
         Node curr = head;
         Node prev_first = null;
-        boolean head_check = true;
+        boolean first_check = true;
         while(curr!=null){
-            int count = 0;
             Node prev = null;
             Node first = curr;
+            int count =0;
             while(curr!=null && count<k){
                 Node next = curr.next;
                 curr.next = prev;
                 prev = curr;
                 curr = next;
-                count ++;
+                count++;
             }
-            if(head_check){
-                head = prev; 
-                head_check = false;
+            if(first_check){
+                head = prev;
+                first_check = false;
             }
             else{
                 prev_first.next = prev;
             }
             prev_first = first;
-            
         }
         return head;
     }
