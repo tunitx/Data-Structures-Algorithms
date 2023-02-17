@@ -109,10 +109,14 @@ class Solution
     //Function to remove a loop in the linked list.
     public static void removeLoop(Node head){
         // code here
-        // // remove the loop without losing any nodes
+        //  remove the loop without losing any nodes
         
-        
-        //this code fails in the case where we have a LL in which lst element is connected to 
+        //same as the gfg tutorial solution but only one thing is more
+        // the part after we have slow = fast, if the slow = fast = head,
+        //then we have a kinda ddoubly linked list which we have to handle 
+        // by writing some manipulative code thats all about the change from
+        // orginal solution.
+    
          Node slow = head;
         Node fast = head;
         while(fast!=null  && fast.next!=null){
