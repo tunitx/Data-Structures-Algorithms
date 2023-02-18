@@ -31,9 +31,16 @@ class GFG {
 
 class Solve {
     int[] findTwoElement(int arr[], int n) {
-        // code here
-       int i =0;
+        
+        //counting sort based algorithm
+        //Leetcode version of this question is a bit tricky, have to handle few 
+        //Side testcases as well.
+        // link to leetcode problem : 
+        //https://leetcode.com/problems/first-missing-positive/
+        
+        int i =0;
         while(i<arr.length){
+            // the correctIndex of the element arr[i]
             int correctIndex = arr[i]-1;
             if(arr[correctIndex]!=arr[i]){
                 int temp = arr[i];
