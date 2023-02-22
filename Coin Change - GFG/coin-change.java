@@ -32,7 +32,6 @@ class Solution {
         //just go thru dsa copy/ and jenny's lecture 
         // link :https://youtu.be/L27_JpN6Z1Q
         // date : 22 feb 2023
-         Arrays.sort(coin);
         long [][] mat = new long[coin.length][sum+1];
         for(int i =1; i<=sum; i++){
             if(i%coin[0]==0){
