@@ -35,6 +35,10 @@ class Solution
     public static long[] nextLargerElement(long[] arr, int n)
     { 
         // Your code here
+        //okay so this aint my approach but this is the gelchod tushars approach 
+        //but anyway i liked the idea he implmented so yeah cuz thats what good coders do
+        //you wont be able to understand the logic immeadiately, just give it time 
+        //and try implementing the solution by using stack next time slayyy
         long ans[] = new long [arr.length];
         long max [] = new long [arr.length];
         long maxE =Integer.MIN_VALUE;
