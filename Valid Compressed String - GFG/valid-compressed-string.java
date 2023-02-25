@@ -63,7 +63,7 @@ class Solution {
         char ch1;//=S.charAt(i);
         while(j<tLen&&i<sLen){
         	int jumpTo = 0;
-        	while(j<tLen && T.charAt(j)<='9') {
+        	while(j<tLen && Character.isDigit(T.charAt(j))) {
         		ch2 = T.charAt(j++);
         		jumpTo= jumpTo*10 +(ch2-'0');
         	}
@@ -76,6 +76,7 @@ class Solution {
         	i++;
         	j++;
         }
+            
         return 1;
        
     }
