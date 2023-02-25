@@ -77,7 +77,7 @@ class Solution {
         	j++;
         }
         if(i!=sLen) return 0;
-         if(j!=tLen)return 0;
+        //  if(j!=tLen)return 0;
             
         return 1;
        
