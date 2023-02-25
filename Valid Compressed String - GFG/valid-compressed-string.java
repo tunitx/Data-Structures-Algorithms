@@ -68,20 +68,17 @@ class Solution {
         		jumpTo= jumpTo*10 +(ch2-'0');
         	}
         	i+=jumpTo;
-        	if(i==sLen && j==tLen)
-        		return 1;
-        	if(i>=sLen|| j>=tLen)
-        		return 0;
+        	if(i==sLen && j==tLen) return 1;
+        	if(i>=sLen|| j>=tLen) return 0;
         	ch1 = S.charAt(i);
         	ch2 = T.charAt(j);
-        	if(ch1!=ch2)
-        		return 0;
-        	
+        	if(ch1!=ch2) return 0;
         	i++;
         	j++;
         }
-if(j!=tLen)
-        	return 0;
+        if(i!=sLen) return 0;
+         if(j!=tLen)return 0;
+            
         return 1;
        
     }
