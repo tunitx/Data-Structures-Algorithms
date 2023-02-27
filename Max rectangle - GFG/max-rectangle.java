@@ -31,14 +31,18 @@ class FindMinCost
 class Solution {
     public int maxArea(int mat[][], int n, int m) {
         // add code here.
+        //this is done by implementing max size of rectangle in a histogram waala ques
+        //firstly add the n-1 row to the nth row if mat[i][j]!=0
+        //then treat each row of the mat as an indivisual array and then calculate the max size 
+        //for each row.Return the max size of the any row in the mat
+        
+        // date : 28 feb 2023
          for(int i =1; i<mat.length; i++){
             for(int j = 0; j<mat[i].length; j++){
                 if(mat[i][j]!=0){
                     mat[i][j] +=mat[i-1][j];
                 }
             }
-
-
         }
         int col = mat[0].length;
         int res = 0;
@@ -48,6 +52,7 @@ class Solution {
         }
         return res;
     }
+    
     public static int largestRectangularAreaInAHistogram(int [] mat , int col){
         Deque<Integer> stack = new ArrayDeque<>();
         int res = 0;
@@ -59,7 +64,6 @@ class Solution {
             }
             stack.push(j);
         }
-    
         while(!stack.isEmpty()){
             int top = stack.pop();
            int curr = mat[top]*(stack.isEmpty()?col:col-stack.peek()-1);
