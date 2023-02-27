@@ -52,18 +52,17 @@ class Solution {
         Deque<Integer> stack = new ArrayDeque<>();
         int res = 0;
         for(int j =0; j<mat.length; j++){
-            int curr = 0;
             while(!stack.isEmpty() && mat[stack.peek()]>=mat[j]){
                 int top = stack.pop();
-                curr = mat[top]*(stack.isEmpty()?j:j-stack.peek()-1);
+               int curr = mat[top]*(stack.isEmpty()?j:j-stack.peek()-1);
                 res = Math.max(res,curr);
             }
             stack.push(j);
         }
-        int curr =0;
+    
         while(!stack.isEmpty()){
             int top = stack.pop();
-            curr = mat[top]*(stack.isEmpty()?col:col-stack.peek()-1);
+           int curr = mat[top]*(stack.isEmpty()?col:col-stack.peek()-1);
             res = Math.max(res,curr);
         }
         return res;
