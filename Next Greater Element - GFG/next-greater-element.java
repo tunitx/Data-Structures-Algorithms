@@ -65,8 +65,12 @@ class Solution
     //           j++;
     //       }
     //   }
-    
     //   return ans;
+    
+    
+    //optimised stack based solution,
+    //refer to the notes copy for detailed explanation
+    //date : 27 feb 2023
      Deque<Integer> stack = new ArrayDeque<>();
         long [] ans = new long[arr.length];
         ans[arr.length-1] = -1;
