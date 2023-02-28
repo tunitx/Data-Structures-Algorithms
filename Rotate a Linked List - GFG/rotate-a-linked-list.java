@@ -66,6 +66,10 @@ class Solution{
     //Function to rotate a linked list.
     public Node rotate(Node head, int k) {
         // add code here
+        //just treat the whole linked list as a circular one for once 
+        //connect the tail to the head and then traverse from head to kth node
+        //do kth.next = null and make head = k+1th node
+        //date : 28 feb 2023
         Node curr = head;
         while(curr.next!=null){
             curr = curr.next;
