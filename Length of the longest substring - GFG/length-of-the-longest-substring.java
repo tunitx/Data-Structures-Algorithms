@@ -27,7 +27,11 @@ class GFG
 
 class Solution{
     int longestUniqueSubsttr(String str){
-         int [] ch = new int[256];
+        //idk how i made this solution in just one go
+        //just have a look at the auxilary array made to store the occurences of each character
+        //baaki its pretty simple implementation by sliding window
+        //date : 28 feb 2023
+        int [] ch = new int[256];
         int low =0, i =0;
         int res = Integer.MIN_VALUE;
         while(i<str.length()){
