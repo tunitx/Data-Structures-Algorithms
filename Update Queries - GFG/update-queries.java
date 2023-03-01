@@ -39,6 +39,7 @@ class GFG{
 class Solution{
 	int [] updateQuery(int N, int Q, int [][]U){
         //Write your code here
+        //Write your code here
         //bhenchod who tf will tell that the range l and r are 1 based indexed
         //the question isnt well explained, so the brief explanation of what all we have to perform is:
         //we are given a matrix containing 3 terms, l= left range, r = right range & x = the operand
