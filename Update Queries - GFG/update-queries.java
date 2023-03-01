@@ -39,6 +39,12 @@ class GFG{
 class Solution{
 	int [] updateQuery(int N, int Q, int [][]U){
         //Write your code here
+        //bhenchod who tf will tell that the range l and r are 1 based indexed
+        //the question isnt well explained, so the brief explanation of what all we have to perform is:
+        //we are given a matrix containing 3 terms, l= left range, r = right range & x = the operand
+        //we are being asked to perform Q actions on an empty array of size N(all 0s, initialyy), starting from range l and ending at range r, now the important thing is that the range 
+        //is 1 based indexed, so you have to manipulate it accordingly.
+        //also here we have to perform the OR (|) operation such that; a[i] = a[i]|x from l-1 to r-1 (0 based converted)
         int [] ans = new int [N];
         for (int i =0; i<Q; i++){
             int l = U[i][0];
