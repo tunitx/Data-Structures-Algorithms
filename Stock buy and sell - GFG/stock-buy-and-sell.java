@@ -32,28 +32,31 @@ class Solution {
     public void stockBuySell(int[] arr, int n) {
         // code here
         int start =0;
-        // int end = 0;
-        int i =0;
+        int end = 0;
+        int i =1;
         boolean check = true;
-        while(i<arr.length-1){
-            while(i<arr.length-1 && arr[i+1]>arr[i]){
-                i++;
-           }
-                if(start!=i){
+        while(i<arr.length){
+            if(arr[i]>arr[start] && arr[i]>arr[i-1]){
+                end = i;
+            }
+            else{
+                if(start!=end){
                     check = false;
-                    System.out.print("("+ start + " " + i +")" + " " );
+                    System.out.print("("+ start + " " + end +")" + " " );
                 }
-                start = i+1;
-                i = start;
-            
-            // i++;
+                start = i;
+                end =i;
+            }
+            i++;
         }
-        // if(start!=end){
-        //     System.out.printf("("+ start + " " + i + ")"+ " ");
-        // }
+        if(start!=end){
+            check = false;
+            System.out.print("("+ start + " " + end + ")"+ " ");
+        }
         if(check){
             System.out.print("No Profit");
         }
         System.out.println("");
+        
     }
 }
