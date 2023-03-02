@@ -38,7 +38,7 @@ class Solution {
         while(i<arr.length-1){
             while(i<arr.length-1 && arr[i+1]>arr[i]){
                 i++;
-            }
+           }
                 if(start!=i){
                     check = false;
                     System.out.print("("+ start + " " + i +")" + " " );
