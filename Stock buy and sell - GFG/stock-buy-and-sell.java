@@ -31,33 +31,29 @@ class GFG {
 class Solution {
     public void stockBuySell(int[] arr, int n) {
         // code here
-        int start = 0;
-        int i =1;
-        boolean check = false;
-        while(i<arr.length){
-            if(arr[i]>arr[i-1]){
-                int last = i;
-                int max = arr[i];
-                while(last<n){
-                    if(max>arr[last]){
-                        break;
-                    }
-                    else{
-                        max = Math.max(max,arr[last]);
-                        last++;
-                    }
+        int start =0;
+        // int end = 0;
+        int i =0;
+        boolean check = true;
+        while(i<arr.length-1){
+            while(i<arr.length-1 && arr[i+1]>arr[i]){
+                i++;
+            }
+                if(start!=i){
+                    check = false;
+                    System.out.print("("+ start + " " + i +")" + " " );
                 }
-            check = true;
-            System.out.print("("+ start + " " + (last-1) + ")"+ " ");
-            start = last-1;
-            i = last;
-            }
-            else{
-              start =i;
-               i++;
-            }
+                start = i+1;
+                i = start;
+            
+            // i++;
         }
-        if(!check) System.out.print("No Profit");
+        // if(start!=end){
+        //     System.out.printf("("+ start + " " + i + ")"+ " ");
+        // }
+        if(check){
+            System.out.print("No Profit");
+        }
         System.out.println("");
     }
 }
