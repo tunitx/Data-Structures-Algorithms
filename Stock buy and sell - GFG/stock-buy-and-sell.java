@@ -43,8 +43,8 @@ class Solution {
                     check = false;
                     System.out.print("("+ start + " " + i +")" + " " );
                 }
-                i++;
-                start =i;
+                start = i+1;
+                i = start;
             
             // i++;
         }
