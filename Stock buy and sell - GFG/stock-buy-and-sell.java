@@ -31,6 +31,7 @@ class GFG {
 class Solution {
     public void stockBuySell(int[] arr, int n) {
         // code here
+        int start = 0;
         int i =1;
         boolean check = false;
         while(i<arr.length){
@@ -47,12 +48,12 @@ class Solution {
                     }
                 }
             check = true;
-            System.out.print("("+ (i-1) + " " + (last-1) + ")"+ " ");
-            // start = last-1;
+            System.out.print("("+ start + " " + (last-1) + ")"+ " ");
+            start = last-1;
             i = last;
             }
             else{
-              
+              start =i;
                i++;
             }
         }
