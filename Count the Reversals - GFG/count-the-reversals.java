@@ -31,7 +31,10 @@ class Sol
     int countRev (String str)
     {
         // your code here 
-          Stack<Character> stack = new Stack<>();
+        //inspired from check the paranthesis question
+        //the last return line is just eh, eh, i dont understand it either, its just some mathematical computation
+        // date : 3 march 2023
+         Stack<Character> stack = new Stack<>();
         for(int i =0; i<str.length(); i++){
             if(str.charAt(i)=='{'){
                 stack.push(str.charAt(i));
