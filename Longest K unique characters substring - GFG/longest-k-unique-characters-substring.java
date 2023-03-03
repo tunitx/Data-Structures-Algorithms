@@ -39,10 +39,7 @@ class Solution {
             while(hm.size() > k)
             {
                 hm.put(str.charAt(low), hm.get(str.charAt(low))-1);
-                if(hm.get(str.charAt(low)) == 0)
-                {
-                    hm.remove(str.charAt(low));
-                }
+                if(hm.get(str.charAt(low)) == 0) hm.remove(str.charAt(low));
                 low++;
             }
             i++;
