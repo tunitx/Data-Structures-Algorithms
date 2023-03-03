@@ -24,6 +24,9 @@ class GfG {
 class Solution {
     public int longestkSubstr(String str, int k) {
         // code here
+        //sliding window- hashmap typa beat
+        //take care of the getByDefault shit u used in this code last time, it really messed up shit for you
+        //date : 3 mar 2023
         HashMap<Character, Integer> hm = new HashMap<>();
         int low =0, i =0;
         int max = Integer.MIN_VALUE;
@@ -32,7 +35,8 @@ class Solution {
             hm.put(ch, hm.getOrDefault(ch, 0) + 1);
             if (hm.size() == k) {
                 max = Math.max(max, i - low + 1);
-            }  while(hm.size() > k)
+            }  
+            while(hm.size() > k)
             {
                 hm.put(str.charAt(low), hm.get(str.charAt(low))-1);
                 if(hm.get(str.charAt(low)) == 0)
