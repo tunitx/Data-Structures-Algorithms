@@ -48,20 +48,28 @@ class Solution
     static void reverse(Stack<Integer> s)
     {
         // add your code here
-        // int [] arr = new int[s.size()];
-        ArrayList<Integer> list = new ArrayList<>();
-        int i =0,j=0;
-        reverseTheStack(s, list,i ,j);
+           int [] arr = new int[s.size()];
+        int i =0;
+        reverseTheStack(s, arr, i);
     }
-    static void reverseTheStack(Stack<Integer> stack , ArrayList<Integer> list, int i, int j){
+    public static int reverseTheStack(Stack<Integer>stack,int [] arr, int i){
         if(stack.isEmpty()){
-            // i=0;
-            return;
+            i=0;
+//            System.out.println("im");
+//            System.out.println(i);
+            return i;
         }
-        list.add(stack.pop());
-        reverseTheStack(stack, list, i++,j);
-        stack.push(list.get(0));
-        list.remove(0);
-    
+        arr[i] = stack.pop();
+//         System.out.println(arr[i]);
+         i++;
+        int k = reverseTheStack(stack, arr, i);
+//         System.out.println(arr[i]);
+
+
+
+
+        stack.push(arr[k]);
+        //  System.out.println(stack.peek());
+         return k+1;
     }
 }
