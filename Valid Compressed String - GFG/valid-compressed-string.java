@@ -39,7 +39,7 @@ class Solution {
             if( i==sLen && j==tLen){
                 return 1;
             }
-            if(i>=sLen || j>=tLen){
+            if(i>sLen || j>tLen){
                 return 0;
             }
             if(S.charAt(i)!=T.charAt(j)){
