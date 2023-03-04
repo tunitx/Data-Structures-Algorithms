@@ -24,60 +24,33 @@ class GFG {
 class Solution {
     static int checkCompressed(String S, String T) {
         // code here
-        // int i =0, j=0;
-        // boolean check = false;
-        // int sLen = S.length(),tLen=T.length();
-        // while(i<S.length() && j<T.length()){
-        //     if(Character.isDigit(T.charAt(j))){
-        //         i = i+Character.getNumericValue(T.charAt(j));
-        //         j++;
-        //     }
-        //     if(i==sLen && j==tLen)
-        // 		return 1;
-        // 	if(i>=sLen|| j>=tLen)
-        // 		return 0;
-        //     else if(S.charAt(i)!=T.charAt(j)){
-        //         return 0;
-        //     }
-        //     else{
-        //         check = true;
-        //         i++;
-        //         j++;
-        //     }
-        // }
-        // if(j!=tLen)
-        // 	return 0;
-        // if(i!=S.length()){
-        //     return 0;
-        // }
-        // // if(j!=T.length()){
-        // //     return 0;
-        // // }
-        //  return 1;
-        int sLen = S.length(),tLen=T.length();
-    	if(sLen==0 || T.length()==0) {
-    		return 0;
-    	}
-    	int i=0,j=0;
-        char ch2;//= T.charAt(j);
-        char ch1;//=S.charAt(i);
-        while(j<tLen&&i<sLen){
-        	int jumpTo = 0;
-        	while(j<tLen && Character.isDigit(T.charAt(j))) {
-        		ch2 = T.charAt(j++);
-        		jumpTo= jumpTo*10 +(ch2-'0');
-        	}
-        	i+=jumpTo;
-        	if(i==sLen && j==tLen) return 1;
-        	if(i>=sLen|| j>=tLen) return 0;
-        	ch1 = S.charAt(i);
-        	ch2 = T.charAt(j);
-        	if(ch1!=ch2) return 0;
-        	i++;
-        	j++;
+        int sLen = S.length();
+        int tLen = T.length();
+        int i =0, j =0;
+        boolean check = false;
+        while(i<sLen && j<tLen){
+            int jumpTo = 0;
+            while( j<tLen && i<sLen && Character.isDigit(T.charAt(j)) ){
+                int k =   Character.getNumericValue(T.charAt(j));
+                jumpTo= jumpTo*10 + k;
+                j++;
+            }
+            i+=jumpTo;
+            if( i==sLen && j==tLen){
+                return 1;
+            }
+            if(i>=sLen || j>=tLen){
+                return 0;
+            }
+            if(S.charAt(i)==T.charAt(j)){
+                // check = true;
+            }
+            else{
+                return 0;
+            }
+            i++;
+            j++;
         }
-            
-        return 1;
-       
+        return (i==sLen && j==tLen)?1:0;
     }
 }
