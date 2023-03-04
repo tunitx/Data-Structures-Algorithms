@@ -42,10 +42,7 @@ class Solution {
             if(i>=sLen || j>=tLen){
                 return 0;
             }
-            if(S.charAt(i)==T.charAt(j)){
-                // check = true;
-            }
-            else{
+            if(S.charAt(i)!=T.charAt(j)){
                 return 0;
             }
             i++;
