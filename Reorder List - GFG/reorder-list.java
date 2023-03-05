@@ -90,6 +90,8 @@ class Node {
 class Solution {
     void reorderlist(Node head) {
         // Your code here
+        //No shit i did this questionbut i still dont know how to reverse the linked list🩻🩻
+        //Date ; 3 march 2023
         Node slow = head, fast = head;
         Node rev = null;
         while(fast.next!=null && fast.next.next!=null){
