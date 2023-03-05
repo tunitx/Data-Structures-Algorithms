@@ -31,27 +31,35 @@ class GFG {
 // User function Template for Java
 
 class Solution {
-    public static int[] asteroidCollision(int N, int[] asteroids) {
+    public static int[] asteroidCollision(int N, int[] arr) {
         // code here
-         Stack<Integer> s = new Stack<>();
-        for (int i : asteroids) {
-            if (i > 0) {
-                s.push(i);
-            } else { // i is negative
-                while (!s.isEmpty() && s.peek() > 0 && s.peek() < Math.abs(i)) {
-                    s.pop();
-                }
-                if (s.isEmpty() || s.peek() < 0) {
-                    s.push(i);
-                } else if (i + s.peek() == 0) {
-                    s.pop(); // equal
-                }
+        Stack<Integer> stack = new Stack<>();
+         for(int i =0; i<arr.length; i++ ){
+           if(arr[i]>0){
+               stack.push(arr[i]);
+           }
+           else{
+               
+          
+            while (!stack.isEmpty() && arr[i]<0 && stack.peek()>0 && stack.peek()<Math.abs(arr[i]) ){
+               stack.pop();
             }
+            if(stack.isEmpty() || stack.peek()<0){
+                stack.push(arr[i]);
+            }
+            else if (arr[i]+stack.peek() ==0){
+                stack.pop();
+            }
+           }
+           
+            
         }
-        int[] res = new int[s.size()];
-        for (int i = res.length - 1; i >= 0; i--) {
-            res[i] = s.pop();
+        
+        int n = stack.size();
+        int [] ans = new int [n];
+        for(int i=n-1; i>=0; i--){
+            ans[i]=stack.pop();
         }
-        return res;
+        return ans;
     }
 }
