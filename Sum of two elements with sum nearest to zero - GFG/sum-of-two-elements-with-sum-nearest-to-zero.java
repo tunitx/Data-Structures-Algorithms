@@ -37,12 +37,11 @@ class Solution
     public static int closestToZero (int arr[], int n)
     {
         // your code here
-       int sum, res = 999999;
+       int sum, res = Integer.MAX_VALUE;
        Arrays.sort(arr);
        int i =0, j = n-1;
        while(i<j){
              sum = arr[i]+arr[j];
-            
            if(Math.abs(sum)<Math.abs(res)){
                res = sum;
            }
