@@ -23,49 +23,29 @@ class GFG{
 //User function Template for Java
 
 class Solution{
-    static int maxLength(String S){
+    static int maxLength(String str){
         // code here
-        //   int res =0;
-        // Stack<Character>  stack = new Stack<>();
-        // for(int i =0; i<str.length(); i++){
-        //     if(stack.isEmpty()){
-        //         stack.push(str.charAt(i));
-        //     }
-        //     else if(str.charAt(i)==')' && stack.peek()=='('){
-        //         stack.pop();
-        //         // res = res+
-        //     }
-        //     else{
-        //         stack.push(str.charAt(i));
-        //     }
-        // }
-        // return res;
-           Stack<Integer> s=new Stack<>();
-
-        for(int i=0;i<S.length();i++){
-
-            if(s.size()>0 && (S.charAt(s.peek())=='(' &&  S.charAt(i)==')'))
-
-            s.pop();
-
-            else
-
-            s.push(i);
-
+        Stack<Integer> stack = new Stack<>();
+        int res =0;
+        stack.push(-1);
+        for(int i =0; i<str.length(); i++){
+            char ch = str.charAt(i);
+            if(ch=='('){
+                stack.push(i);
+            }
+            else{
+                if(!stack.isEmpty()){
+                    stack.pop();
+                }
+                if(!stack.isEmpty()){
+                    res = Math.max(res, i-stack.peek());
+                }
+                else{
+                    stack.push(i);
+                }
+            }
         }
-
-        int res=-1,max=0;
-
-        for(int i:s){
-
-            max=Math.max(max,i-res-1);
-
-            res=i;
-
-        }
-
-        max=Math.max(max,S.length()-res-1);
-
-        return max;
+        return res;
+        
     }
 }
