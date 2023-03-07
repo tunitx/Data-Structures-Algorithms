@@ -39,12 +39,12 @@ class Solution {
          int maxIdx = -1;
         int prevMax =0;
         for(int i =0; i<n; i++){
-            int firstOccurence = firstOccurenceInMat(mat[i],n, m);
-            if(firstOccurence ==-1){
+            int lastOccurence = lastOccurenceInMat(mat[i],n, m);
+            if(lastOccurence ==-1){
                 return i;
             }
             else{
-                int currMax = m-1-firstOccurence;
+                int currMax = m-1-lastOccurence;
                 if(prevMax<currMax) {
                     prevMax = currMax;
                     maxIdx = i;
@@ -54,7 +54,7 @@ class Solution {
         }
         return maxIdx;
     }
-    public static int firstOccurenceInMat(int [] mat, int n, int m){
+    public static int lastOccurenceInMat(int [] mat, int n, int m){
         int low = 0;
          int high = m-1;
          int res = 0;
