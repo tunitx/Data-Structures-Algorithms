@@ -38,6 +38,8 @@ class Solution
     {
         
         // your code here
+        // sat sri akal ji mein ek bruh moment report karna chauna aan
+        //date : 8 march 2023
         if(n==1){
             return 1;
         }
