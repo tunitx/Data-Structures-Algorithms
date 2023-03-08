@@ -47,15 +47,16 @@ class Solution {
                 count++;
             }
             else if(Character.isDigit(ch)){
-                if(sum>255){
+                
+                if(i<str.length()-1 && ch == '0' && zeroCheck && str.charAt(i+1)!='.'){
                     return false;
                 }
-                else if(i<str.length()-1 && ch == '0' && zeroCheck && str.charAt(i+1)!='.'){
-                    return false;
-                }
-                else{
+               
                     zeroCheck = false;
                     sum = Character.getNumericValue(ch) + 10*sum;
+ 
+                if(sum>255){
+                    return false;
                 }
             }
             else{
@@ -63,9 +64,9 @@ class Solution {
             }
 
         }
-        if(sum>255){
-            return false;
-        }
+        // if(sum>255){
+        //     return false;
+        // }
         if(count!=3){
             return false;
         }
