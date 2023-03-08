@@ -51,10 +51,8 @@ class Solution {
                 if(i<str.length()-1 && ch == '0' && zeroCheck && str.charAt(i+1)!='.'){
                     return false;
                 }
-               
                     zeroCheck = false;
                     sum = Character.getNumericValue(ch) + 10*sum;
- 
                 if(sum>255){
                     return false;
                 }
@@ -64,12 +62,6 @@ class Solution {
             }
 
         }
-        // if(sum>255){
-        //     return false;
-        // }
-        if(count!=3){
-            return false;
-        }
-        return true;
+        return count==3;
     }
 }
