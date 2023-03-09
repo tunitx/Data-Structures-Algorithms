@@ -84,6 +84,9 @@ Node.printList(Node node);
 class Solution {
     public static ArrayList<Node> findAnagrams(Node head, String s) {
         // code here
+        //BRUH IDK HOW THIS GOT SOLVED LMAAAAAO FUCK ME
+        //PLS AGAR REVISION KE TIME PE YE VAAPIS NA HO TOH DONT GET DISAPPOINTED LMFAAO😭😭
+        //date : 9 march 2023
         ArrayList<Node> list = new ArrayList<>();
         int [] pat = new int [256];
         int [] str = new int [256];
