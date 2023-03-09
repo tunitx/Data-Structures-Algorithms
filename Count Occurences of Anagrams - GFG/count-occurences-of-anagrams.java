@@ -29,7 +29,9 @@ class Solution {
 
     int search(String pat1, String str1) {
         // code here
-           int [] str= new int[256];                                                                          
+        //this can be done in a simpler way but i just followed mind and computed this sliding window based solution
+        //date : 9 march 2023
+    int [] str= new int[256];                                                                          
    int [ ] pat = new int[256];                                                                        
    int count =0;                                                                                      
    for(int i =0; i<pat1.length(); i++){                                                               
