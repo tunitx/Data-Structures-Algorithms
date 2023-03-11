@@ -102,40 +102,30 @@ class GFG {
 
 
 class Solution {
-    public static ArrayList<Integer> solveQueries(int N, int num, int[] A, int[][] Q) {
+    public static ArrayList<Integer> solveQueries(int N, int num, int[] arr, int[][] mat) {
         // code here
-        ArrayList<Integer> ans = new ArrayList<Integer>();
-        HashMap<Integer, HashMap<Integer, Integer>> map = new HashMap<Integer, HashMap<Integer, Integer>>();
-
-        // populate map with frequency of each element in subarray A[i:N-1] for each index i in A
-        for (int i = 0; i < N; i++) {
-            HashMap<Integer, Integer> temp = new HashMap<Integer, Integer>();
-            for (int j = i; j < N; j++) {
-                int freq = temp.getOrDefault(A[j], 0);
-                temp.put(A[j], freq + 1);
-            }
-            map.put(i, temp);
+          HashMap< Integer, HashMap<Integer, Integer >> hm = new HashMap<>();
+        ArrayList<Integer> list = new ArrayList<>();
+        for(int i =0; i<arr.length; i++){
+            HashMap<Integer, Integer> temp = new HashMap<>();
+           for(int j =i; j<arr.length; j++){
+               temp.put(arr[j], temp.getOrDefault(arr[j],0)+1);
+           }
+           hm.put(i, temp);
         }
-
-        // loop through the queries and calculate answer for each query
-        for (int i = 0; i < num; i++) {
-            int L = Q[i][0];
-            int R = Q[i][1];
-            int K = Q[i][2];
-            int count = 0;
-
-            // loop through the elements in A from L to R
-            for (int j = L; j <= R; j++) {
-                // check if frequency of A[j] from j to N-1 is equal to K
-                if (map.get(j).getOrDefault(A[j], 0) == K) {
+        for(int [] i : mat){
+            int l = i[0];
+            int r = i[1];
+            int k = i[2];
+            int count =0;
+            for(int j = l; j<=r; j++){
+                if(hm.get(j).get(arr[j])==k){
                     count++;
                 }
             }
-
-            ans.add(count);
+            list.add(count);
         }
-
-        return ans;
+        return list;
     }
 }
         
