@@ -35,26 +35,19 @@ class GFG
 class Solution{
     ArrayList<Integer> subsetSums(ArrayList<Integer> arr, int N){
         // code here
+        //bhagwaan jaane how tf this runs im done for da day
+        //12 march 2023
         ArrayList<Integer> list = new ArrayList<>();
-        int key =0;
-        int j =0;
-        
-            recursiveFunction(arr,j,key, list);
-
-        // list.add(0);
-        Collections.sort(list);
+        int key =0,j=0;
+        recursiveFunction(arr,j,key, list);
         return list;
     }
-     public static void recursiveFunction( ArrayList<Integer> arr , int i, int key, ArrayList<Integer> list){
+     public static void recursiveFunction(ArrayList<Integer> arr , int i, int key, ArrayList<Integer> list){
         if(i==arr.size()){
             list.add(key);
             return;
         }
-        
-        // list.add(key);
-        // i++;
         recursiveFunction(arr,i+1,key+arr.get(i), list);
-        // i++;
         recursiveFunction(arr,i+1,key,list);
     }
 }
