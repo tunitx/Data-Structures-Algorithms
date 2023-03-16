@@ -57,10 +57,10 @@ class Solution
   Queue<Character> q = new ArrayDeque<>();
         String ans ="";
         int [] ch = new int[256];
-        q.add(str.charAt(0));
-        ch[str.charAt(0)]++;
-        ans += str.charAt(0);
-        for(int i =1; i<str.length(); i++ ) {
+        // q.add(str.charAt(0));
+        // ch[str.charAt(0)]++;
+        // ans += str.charAt(0);
+        for(int i =0; i<str.length(); i++ ) {
           char c = str.charAt(i);
           ch[c]++;
           if(ch[c]==1){
