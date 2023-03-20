@@ -35,57 +35,20 @@ class Solution
     public static long[] nextLargerElement(long[] arr, int n)
     { 
         // Your code here
-        //okay so this aint my approach but this is the gelchod tushars approach 
-        //but anyway i liked the idea he implmented so yeah cuz thats what good coders do
-        //you wont be able to understand the logic immeadiately, just give it time 
-        //and try implementing the solution by using stack next time slayyy
-    //     long ans[] = new long [arr.length];
-    //     long max [] = new long [arr.length];
-    //     long maxE =Integer.MIN_VALUE;
-    //   for(int i =n-1; i>=0; i--){
-    //     //   maxE = Math.max(max, arr[i]);
-    //     if(arr[i]>maxE){
-    //         maxE = arr[i];
-    //     }
-    //       max[i] = maxE;
-    //   }
-    //   int i=0,j =0;
-    //   while(i<arr.length && j<arr.length){
-    //       if(arr[i] ==max[i]){
-    //           ans[i] = -1;
-    //           i++;
-    //           j++;
-    //       }
-    //       else if(arr[i]<arr[j]){
-    //           ans[i] = arr[j];
-    //           i++;
-    //           j= i;
-    //       }
-    //       else{
-    //           j++;
-    //       }
-    //   }
-    //   return ans;
-    
-    
-    //optimised stack based solution,
-    //refer to the notes copy for detailed explanation
-    //date : 27 feb 2023
-     Deque<Integer> stack = new ArrayDeque<>();
-        long [] ans = new long[arr.length];
-        ans[arr.length-1] = -1;
-        stack.push(arr.length-1);
-        for(int  i =arr.length-2; i>=0 ; i--){
-            while(!stack.isEmpty() && arr[stack.peek()]<=arr[i]){
+        ArrayDeque <Integer> stack = new ArrayDeque<>();
+        long [] ans = new long [n];
+        for(int i =n-1; i>=0; i--){
+            while(!stack.isEmpty() && arr[i]>=arr[stack.peek()]){
                 stack.pop();
             }
             if(stack.isEmpty()){
-                ans[i] = -1;
+                ans[i]=-1;
+                stack.push(i);
             }
             else{
                 ans[i] = arr[stack.peek()];
+                stack.push(i);
             }
-            stack.push(i);
         }
         return ans;
     } 
