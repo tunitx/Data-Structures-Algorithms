@@ -134,7 +134,6 @@ class Level_Order_Traverse
         q.add(root);
         q.add(null);
         while(!q.isEmpty()){
-           
             ArrayList<Integer> temp = new ArrayList<>();
             while(!q.isEmpty() && q.element()!=null){
                 Node curr = q.poll();
