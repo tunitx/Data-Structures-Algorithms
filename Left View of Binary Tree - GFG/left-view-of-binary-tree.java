@@ -162,13 +162,16 @@ class Tree
           int count = q.size();
           for(int i =0; i<count; i++){
               Node curr = q.poll();
-              if(i==0 && curr!=null){
+              if(curr==null){
+                  break;
+              }
+              if(i==0 ){
                   list.add(curr.data);
               }
-              if(curr!=null && curr.left!=null){
+              if(curr.left!=null){
                   q.add(curr.left);
               }
-              if(curr!= null && curr.right!=null){
+              if( curr.right!=null){
                   q.add(curr.right);
               }
           }
