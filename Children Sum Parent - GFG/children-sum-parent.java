@@ -136,6 +136,9 @@ class Tree
     public static int isSumProperty(Node root)
     {
         // add your code here
+        //date : 22 march 2023
+        // im literally drunk rn and idk how tf i solved this question
+        //find god 🙏
         Queue<Node> q = new LinkedList<>();
         q.add(root);
         while(!q.isEmpty()){
