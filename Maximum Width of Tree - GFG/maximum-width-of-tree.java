@@ -124,6 +124,8 @@ class Solution {
     // Function to get the maximum width of a binary tree.
     int getMaxWidth(Node root) {
         // Your code here
+        //date : 23 march 2023
+        //same as print each level of tree question
         Queue<Node> q = new LinkedList<>();
         q.add(root);
         int max = Integer.MIN_VALUE;
