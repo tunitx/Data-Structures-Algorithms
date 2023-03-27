@@ -67,6 +67,8 @@ class Solution {
 
     public static int countNodes(Node root) {
         // Code here
+        //simple level order traversal of BT
+        //date : 27th march 2023
         if(root==null) return 0;
         Queue<Node> q = new LinkedList<>();
         q.add(root);
