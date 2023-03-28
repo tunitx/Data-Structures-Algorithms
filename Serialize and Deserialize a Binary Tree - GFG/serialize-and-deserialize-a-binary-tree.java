@@ -133,6 +133,8 @@ class Tree
 	public void serialize(Node root, ArrayList<Integer> A) 
 	{
 	    //code here
+	  //date : 28th march 2023
+	  //based on simple preorder traversal of a binary tree
 	    if(root== null){
 	        A.add(-1);
 	        return;
