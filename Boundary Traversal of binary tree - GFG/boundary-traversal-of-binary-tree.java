@@ -112,15 +112,15 @@ class Solution
 	ArrayList <Integer> boundary(Node node)
 	{
 	    ArrayList<Integer> list = new ArrayList<>();
-	   if(isLeaf(node)==false) list.add(node.data);
-	    leftTraversal(node, list);
+	   if(node.left!=null || node.right!=null) list.add(node.data);
+	    leftTraversal(node.left, list);
 	    leafNodes(node, list);
-	    rightTraversal(node, list);
+	    rightTraversal(node.right, list);
 	    return list;
 	}
 	void leftTraversal(Node root, ArrayList<Integer> list){
 	    
-	    Node curr = root.left;
+	    Node curr = root;
 	    while(curr!=null){
 	        if(curr.left!=null || curr.right!=null) list.add(curr.data);
 	        if(curr.left!=null) curr = curr.left;
@@ -135,16 +135,10 @@ class Solution
 	        list.add(root.data);
 	    }
 	    return root;
-	   //if(isLeaf(root)){
-    //         res.add(root.data);
-    //         return;
-    //     }
-    //     if(root.left!=null) leafNodes(root.left,res);
-    //     if(root.right!=null) leafNodes(root.right,res);
 	}
 	void rightTraversal(Node root, ArrayList<Integer> list){
 	   // curr = curr.right;
-	   Node curr = root.right;
+	   Node curr = root;
 	    ArrayList<Integer> temp = new ArrayList<>();
 	    while(curr!=null){
 	        if(curr.right!= null || curr.left!=null) temp.add(curr.data);
