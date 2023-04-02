@@ -125,28 +125,14 @@ class Solution
 	Node lca(Node root, int n1,int n2)
 	{
 		// Your code here
-		ArrayList<Node> path1 = new ArrayList<>();
-		ArrayList<Node> path2 = new ArrayList<>();
-		if(root ==null){
-		    return null;
-		}
-		Node ans = null;
-		if(!findPath(root, n1, path1) || !findPath(root, n2, path2)) return null;
-		for(int i =0; i<path1.size() && i<path2.size(); i++){
-		    if(path1.get(i)==path2.get(i)){
-		      //  return path1.get(i);
-		      ans = path1.get(i);
-		    }
-		}
-		return ans;
-	}
-	public static boolean findPath(Node root, int n, ArrayList<Node> list){
-	    if(root==null) return false;
-	    list.add(root);
-	    if(root.data==n) return true;
-	    if(findPath(root.left, n, list) || findPath(root.right, n, list)) return true;
-	    list.remove(list.size()-1);
-	    return false;
+		//date : 27th march, resubmission with optimised solution 
+		if(root == null) return null;
+		if(root.data ==n1 || root.data == n2) return root;
+		Node left = lca(root.left, n1,n2);
+		Node right = lca(root.right, n1,n2);
+		if(left!=null && right !=null) return root;
+		if(left!=null) return left;
+		return right;
 	}
 }
 
