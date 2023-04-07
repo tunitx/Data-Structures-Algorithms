@@ -120,6 +120,7 @@ public class Solution
     boolean isBST(Node root)
     {
         // code here.
+        //date : 7th april 2023
         if(root == null) return true;
         if(!isBST(root.left)) return false;
         if(root.data<=prev) return false;
