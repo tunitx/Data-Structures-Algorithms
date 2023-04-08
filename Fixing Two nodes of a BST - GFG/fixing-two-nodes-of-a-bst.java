@@ -185,7 +185,10 @@ class Solution
     public Node correctBST(Node root)
     {
         //code here.
-        fixBST( root);
+        //date : 8th april 2023
+        //simple inorder traversal like check for BST solution 
+        //maintain 3 global variables all initialised as null
+        fixBST(root);
         int temp = first.data;
         first.data = second.data;
         second.data = temp;
