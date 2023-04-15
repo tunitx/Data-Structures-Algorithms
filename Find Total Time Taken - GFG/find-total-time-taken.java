@@ -41,6 +41,7 @@ class Solution
     public static long totalTime(int n,int arr[],int time[])
     {
         int count = 0;
+        //date : 15 april 2023
         HashSet<Integer>set = new HashSet<>();
         set.add(arr[0]);
         for(int i =1; i<n; i++){
