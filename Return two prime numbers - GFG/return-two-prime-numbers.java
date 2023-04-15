@@ -39,8 +39,10 @@ class Solution{
                 li.add(i);
 
                 li.add(N-i);
+                return li;
 
             }
+            
 
         }
 
