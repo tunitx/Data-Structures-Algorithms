@@ -47,6 +47,8 @@ public class Main {
 class Solution {
     ArrayList<Integer> findSum(int a[], int b[]) {
         // code here
+        //self respect left the chat
+        // date : 16th april 2023
         boolean check = true;
         ArrayList<Integer> list = new ArrayList<>();
         int len = Math.abs(a.length-b.length);
