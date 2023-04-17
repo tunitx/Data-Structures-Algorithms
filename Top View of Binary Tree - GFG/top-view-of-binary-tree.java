@@ -131,21 +131,20 @@ class Solution
     static ArrayList<Integer> topView(Node root)
     {
         // add your code
+        //date : 17th april 2023
         ArrayList<Integer> list = new ArrayList<>();
         TreeMap<Integer, Integer> mp = new TreeMap<>();
-        int hd = 0;
-        preOrder(root, 0, mp);
+        levelOrder(root, mp);
         for(Map.Entry<Integer, Integer> e : mp.entrySet()){
             list.add(e.getValue());
         }
         return list;
         
     }
-    static void preOrder(Node root, int hd , TreeMap<Integer, Integer> mp){
+    static void levelOrder(Node root, TreeMap<Integer, Integer> mp){
        Queue<pair> q= new LinkedList<>();
        q.add(new pair(root, 0));
        while(!q.isEmpty()){
-          
             pair p = q.poll();
             Node curr = p.node;
            int val = p.hd;
@@ -158,7 +157,6 @@ class Solution
            if(curr.right!=null){
                 q.add(new pair( curr.right, val+1));
            }
-           
        }
     }
 }
