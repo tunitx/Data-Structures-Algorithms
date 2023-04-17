@@ -141,20 +141,25 @@ class Solution
         return list;
         
     }
-    static void preOrder(Node root, int h , TreeMap<Integer, Integer> mp){
+    static void preOrder(Node root, int hd , TreeMap<Integer, Integer> mp){
        Queue<pair> q= new LinkedList<>();
        q.add(new pair(root, 0));
-      while(q.isEmpty()==false){
-            pair p=q.poll();
-            Node curr=p.node;
-            int hd=p.hd;
-            if(mp.containsKey(hd)==false)
-                mp.put(hd,curr.data);
-            if(curr.left!=null)
-                q.add(new pair(curr.left,hd-1));
-            if(curr.right!=null)
-                q.add(new pair(curr.right,hd+1));
-        }
+       while(!q.isEmpty()){
+          
+            pair p = q.poll();
+            Node curr = p.node;
+           int val = p.hd;
+           if(!mp.containsKey(val)){
+               mp.put(val, curr.data);
+           }
+           if(curr.left!=null){
+               q.add(new pair( curr.left, val-1));
+           }
+           if(curr.right!=null){
+                q.add(new pair( curr.right, val+1));
+           }
+           
+       }
     }
 }
 class pair {
