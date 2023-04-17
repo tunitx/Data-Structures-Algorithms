@@ -123,6 +123,8 @@ class Solution
     public ArrayList <Integer> bottomView(Node root)
     {
         // Code here
+        //date : 17th april 2023
+        //same as top view of BT and vertical traversal of BT
         TreeMap<Integer, Integer> mp = new TreeMap<>();
         ArrayList<Integer> list = new ArrayList<>();
         levelOrder(root, mp);
@@ -143,8 +145,6 @@ class Solution
             if(curr.right!=null) q.add(new pair(curr.right, hd+1));
         }
     }
-    
-    
 }
 class pair{
     Node node;
