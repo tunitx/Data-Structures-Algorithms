@@ -32,6 +32,7 @@ class Solution{
     static int toyCount(int N, int K, int arr[])
     {
         // code here
+        //date : 28th april 2023
         Arrays.sort(arr);
         int count =0;
         int sum = 0;
