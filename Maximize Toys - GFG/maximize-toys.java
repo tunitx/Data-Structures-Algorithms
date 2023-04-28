@@ -42,7 +42,7 @@ class Solution{
                 sum+=arr[i];
             }
             else{
-                break;
+                return count;
             }
         }
         return count;
