@@ -112,11 +112,7 @@ class Solution
             if(curr.data<currMax.data){
                 currMax.next = curr.next;
                 curr = curr.next;
-            }
-            else if(curr.data>currMax.data){
-                currMax = curr;
-                curr = curr.next;
-            }
+            }   
             else{
                 currMax = curr;
                 curr = curr.next;
