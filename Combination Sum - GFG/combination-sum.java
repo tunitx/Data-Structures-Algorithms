@@ -77,9 +77,7 @@ class Solution
     static void helper(int index, int target, ArrayList<Integer> arr , ArrayList<ArrayList<Integer>> ans, ArrayList<Integer> ds){
         if(index == arr.size()){
             if(target==0){
-                
-                    ans.add(new ArrayList<>(ds));
-                
+                ans.add(new ArrayList<>(ds));
             }
             return;
         }
