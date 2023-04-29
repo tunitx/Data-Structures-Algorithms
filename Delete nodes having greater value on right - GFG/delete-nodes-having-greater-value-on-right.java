@@ -70,44 +70,26 @@ public class LinkedList
 
 /*
 class Node {
-   int data;
-   Node next;
+  int data;
+  Node next;
 
   Node(int data) {
       this.data = data;
   }
 }
-*/
+// */
 class Solution
 {
     Node compute(Node head)
     {
-        // your code here
-        // Node curr = head;
-        // Node prev = null;
-        // boolean headCheck = true;
-        // while(curr.next!=null){
-        //     if(curr.next.data>curr.data){
-        //         if(headCheck){
-        //             curr = curr.next;
-        //             head = curr;
-        //         }
-        //         else{
-        //             headCheck = false;
-        //             curr= curr.next;
-        //              prev.next = curr;
-        //         }
-        //     }
-        //     else{
-        //         headCheck = false;
-        //         prev = curr;
-        //         curr= curr.next;
-        //     }
-        // }
-       
+        //date : 29th april 2023
+        //you might need to revise this in future as the approach is kinda tricky
+        //reverse the linked list and then set a Node named currMax so far and keep comparing it with
+        //the other nodes while travsersing from left to right in the LL
+        //at the end, just reverse the linked list again and return the head accordingly
         Node newHead = reverse(head);
         Node currMax = newHead;
-       Node  curr = newHead;
+        Node  curr = newHead;
         while( curr!=null){
             if(curr.data<currMax.data){
                 currMax.next = curr.next;
@@ -119,8 +101,6 @@ class Solution
             }
         }
         return reverse(newHead);
-        // return newHead;
-        // return head;
     }
     Node reverse(Node head){
          Node prev = null;
