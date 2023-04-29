@@ -65,8 +65,20 @@ class Solution
     static ArrayList<ArrayList<Integer>> combinationSum(ArrayList<Integer> A, int B)
     {
         // add your code here
+        //date : 30 april 2023
+        //faadu question ekdum
+        //choose a element or go to next element 
+        //if you choose it then decrease the target by the chosen element ie target-arr[i]
+        // and if you dont chose the element just increase the curr index by 1 ie index+1
+        
+        
         ArrayList<ArrayList<Integer>> ans = new ArrayList<ArrayList<Integer>>();
         int index = 0;
+        
+        //to remove all the duplicates from the arrayList 
+        //this is to avoid duplocate combinations in the ans 
+        // we could have done it by adding (if(ans.contains(ds))) in base condition as well
+        // but it takes extra time and thus increases the time complexity
          Set<Integer> set = new HashSet<>(A);
         A.clear();
         A.addAll(set);
@@ -81,7 +93,7 @@ class Solution
             }
             return;
         }
-        
+        //either choose the element
         if(arr.get(index) <=target){
             ds.add(arr.get(index));
             
@@ -89,6 +101,7 @@ class Solution
             
             ds.remove(ds.size()-1);
         }
+        //or move to next index
         helper(index+1, target, arr, ans, ds);
         if(target>arr.get(index)){
             return;
