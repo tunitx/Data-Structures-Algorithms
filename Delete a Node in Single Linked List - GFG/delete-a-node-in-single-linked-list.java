@@ -94,8 +94,8 @@ class GfG
 	}
 // 	int count =1;
 	Node curr = head;
-	x--;
-	while(x>1 ){
+// 	x--;
+	while(x>2 ){
 	    curr= curr.next;
 	    x--;
 	}
