@@ -16,6 +16,12 @@ class Solution
     static ArrayList<Integer> kTop(int[] arr, int n, int k) 
     { 
         //code here.
+        //date : 1st may 2023
+        //logic is mainly comparator centric, you could have used TreeMap but the thing is u cant sort
+        //treeMap elements on the basis of their values, it just doesnt allow that
+        //so instead what you do is , you maintain a treeSet which contains pairs of arr[i] & their freq
+        //and u also maintain another hashMap with (arr[i] and pair) and do some constant operations on the 
+        //stream
         HashMap<Integer, pair> map = new HashMap<>();
         TreeSet<pair> tSet = new TreeSet<pair>((p1, p2)->{
             if(p1.freq== p2.freq){
