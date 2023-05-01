@@ -17,7 +17,7 @@ class Solution
     { 
         //code here.
         HashMap<Integer, pair> map = new HashMap<>();
-        Set<pair> tSet = new TreeSet<pair>((p1, p2)->{
+        TreeSet<pair> tSet = new TreeSet<pair>((p1, p2)->{
             if(p1.freq== p2.freq){
                 return p1.val-p2.val;
             }
@@ -29,8 +29,8 @@ class Solution
         for(int i =0; i<n; i++){
             if(map.containsKey(arr[i])){
                 pair p = map.get(arr[i]);
-                 tSet.remove(p);
-                p.freq++;
+                tSet.remove(p);
+                 p.freq++;
                 tSet.add(p);
             }
             else{
