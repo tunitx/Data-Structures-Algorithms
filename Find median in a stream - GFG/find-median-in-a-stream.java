@@ -31,63 +31,24 @@ class GFG
 // } Driver Code Ends
 
 
-// class Solution
-// {
-//     //Function to insert heap.
-//   static  PriorityQueue<Integer> s = new PriorityQueue<>(Collections.reverseOrder());
-//   static  PriorityQueue<Integer> g = new PriorityQueue<>();
-//     public static void insertHeap(int x)
-//     {
-//         // add your code here
-//         if(s.isEmpty() || x<=s.peek() ){
-//             s.add(x);
-//         }
-//         else{
-//             g.add(x);
-//         }
-//         balanceHeaps();
-//     }
-    
-//     //Function to balance heaps.
-//     public static void balanceHeaps()
-//     {
-//       // add your code here
-//       if(s.size()> g.size()){
-//           g.add(s.poll());
-//       }
-//       else{
-//           s.add(g.poll());
-//       }
-//     }
-    
-//     //Function to return Median.
-//     public static double getMedian()
-//     {
-//         // add your code here
-//         if(s.size() == g.size()){
-//             return (s.peek() + g.peek())/2.0;
-//         }
-//         return s.peek();
-        
-//     }
-    
-// }
 class Solution
 {
-    private static PriorityQueue<Integer> min;
-    private static PriorityQueue<Integer> max;
+    //Function to insert heap.
+ private static PriorityQueue<Integer> g;
+    private static PriorityQueue<Integer> s;
     
     public Solution(){
-        min = new PriorityQueue<>();
-        max = new PriorityQueue<>(Collections.reverseOrder());
+        g= new PriorityQueue<>();
+        s = new PriorityQueue<>(Collections.reverseOrder());
     }
-    
     public static void insertHeap(int x)
     {
-        if(max.isEmpty() || max.peek() >= x){
-            max.add(x);
-        }else{
-            min.add(x);
+        // add your code here
+        if(s.isEmpty() || x<=s.peek() ){
+            s.add(x);
+        }
+        else{
+            g.add(x);
         }
         balanceHeaps();
     }
@@ -95,21 +56,27 @@ class Solution
     //Function to balance heaps.
     public static void balanceHeaps()
     {
-       if(max.size() > min.size() +1){
-           min.add(max.poll());
-       }
-       else if(min.size() > max.size()){
-            max.add(min.poll());
-       }
+      // add your code here
+      if(s.size()> g.size()+1){
+          g.add(s.poll());
+      }
+      else if( g.size()>s.size()){
+          s.add(g.poll());
+      }
     }
     
     //Function to return Median.
     public static double getMedian()
     {
-        if(max.size() == min.size())
-            return (max.peek() + min.peek())/2.0;
-        else
-            return max.peek();
+        // add your code here
+        if(s.size() == g.size()){
+            return (s.peek() + g.peek())/2.0;
+        }
+        else{
+            return s.peek();
+        }
+        
+        
     }
     
 }
