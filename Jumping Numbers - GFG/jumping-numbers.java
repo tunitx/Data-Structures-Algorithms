@@ -29,6 +29,9 @@ class Solution {
    }
     static long jumpingNums(long N) {
         // code here
+        //date : 3rd may 2023
+        //dimag kharab question
+        //forming the tree of numbers by recursion and then returning largest number smaller /equal than N
         for(long i =1; i<=9; i++){
             helper(i, N);
         }
