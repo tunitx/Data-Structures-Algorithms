@@ -64,9 +64,11 @@ class Solution {
             }
             else{
                 StringBuilder rev = new StringBuilder();
-                rev.append(og);
-                rev.reverse();
-                String revStr = rev.toString();
+                // rev.append(og);
+                // rev.reverse();
+                 
+                String revStr =  rev.append(og).reverse().toString();
+                // rev.toString();
                 if(revStr.equals(og)){
                     // System.out.println(revStr);
                     continue;
