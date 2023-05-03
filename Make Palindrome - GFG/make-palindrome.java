@@ -58,34 +58,16 @@ class Solution {
         
         for(int i =0; i<arr.length; i++){
             String og = arr[i];
-            if(set.contains(og)){
-                //  System.out.println("s");
-                continue;
-            }
+            if(set.contains(og)) continue;
             else{
                 StringBuilder rev = new StringBuilder();
-                // rev.append(og);
-                // rev.reverse();
-                 
                 String revStr =  rev.append(og).reverse().toString();
-                // rev.toString();
-                if(revStr.equals(og)){
-                    // System.out.println(revStr);
-                    continue;
-                }
-               else if(set.contains(revStr)){
-                //   System.out.println("t");
-                    set.remove(revStr);
-                }else{
-                    // System.out.println(og);
-                    set.add(og);
-                }
+                if(revStr.equals(og)) continue;
+                else if(set.contains(revStr)) set.remove(revStr);      
+                else  set.add(og);   
             }
         }
-        if(!set.isEmpty()){
-            return false;
-        }
-        return true;
+       return set.isEmpty();
     }
 }
         
