@@ -59,17 +59,18 @@ class Solution {
         boolean check = true;
         boolean secCheck = true;
         String checker = arr[0];
-        for(int i =1; i<arr.length ; i++){
-            if(!(checker.equals(arr[i]))){
-                secCheck = false;
-            }
-        }
-        if(secCheck && arr.length>1){
-            return true;
-        }
+        // for(int i =1; i<arr.length ; i++){
+        //     if(!(checker.equals(arr[i]))){
+        //         secCheck = false;
+        //     }
+        // }
+        
         HashSet<String> set = new HashSet<>();
         for(int i =0; i<arr.length; i++){
             String og = arr[i];
+             if(!(checker.equals(arr[i]))){
+                secCheck = false;
+            }
             if(set.contains(og) && og.length()!=1) continue;
             else{
                 StringBuilder rev = new StringBuilder();
@@ -78,22 +79,16 @@ class Solution {
                     check = false;
                     continue;
                 }
-                else if (set.contains(revStr)) {
-                    
-                    set.remove(revStr);     } 
-                else{
-                    set.add(og);   
-                } 
+                else if (set.contains(revStr)) set.remove(revStr);     
+                else set.add(og);  
             }
         }
-    //   if(set.size()==1){
-    //         StringBuilder rev = new StringBuilder();
-    //         String revStr =  rev.append(og).reverse().toString();
-    //         if(rev)
-    //   }
-      return set.isEmpty();
+        if(secCheck && arr.length>1){
+            return true;
         }
-    // return false;
+      return set.isEmpty();
     }
+    
+}
 
         
