@@ -40,22 +40,19 @@ class Solution {
           ArrayList <Integer> ans = new ArrayList<>();
         Queue<Integer> q= new LinkedList<>();
         boolean visited[]= new boolean[vertex];
+        visited[0] = true;
         q.add(0);
-        while (!q.isEmpty()) {
-            int curr=q.remove();
-            ArrayList<Integer> ans1= edges.get(curr);
-            if(visited[curr]==false){
-                ans.add(curr);
-                visited[curr]=true;
-                for(int i=0;i<ans1.size();i++){
-                
-
-                        q.add(edges.get(curr).get(i));
-                    
-                }
-            }
-            
-        }
+      while(!q.isEmpty()){
+          int curr = q.poll();
+          ans.add(curr);
+          
+          for(int i : edges.get(curr)){
+              if(!visited[i]){
+                  visited[i] = true;
+                  q.add(i);
+              }
+          }
+      }
         return ans;    
     }
 }
