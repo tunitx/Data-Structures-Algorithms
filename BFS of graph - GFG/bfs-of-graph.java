@@ -37,6 +37,8 @@ class Solution {
     // Function to return Breadth First Traversal of given graph.
     public ArrayList<Integer> bfsOfGraph(int vertex, ArrayList<ArrayList<Integer>> edges) {
         // Code here
+        //a bit complicated cuz vahi vaahiyat index confusion fucks over again and again
+        //date : 5th april 2023
           ArrayList <Integer> ans = new ArrayList<>();
         Queue<Integer> q= new LinkedList<>();
         boolean visited[]= new boolean[vertex];
@@ -45,7 +47,6 @@ class Solution {
       while(!q.isEmpty()){
           int curr = q.poll();
           ans.add(curr);
-          
           for(int i : edges.get(curr)){
               if(!visited[i]){
                   visited[i] = true;
