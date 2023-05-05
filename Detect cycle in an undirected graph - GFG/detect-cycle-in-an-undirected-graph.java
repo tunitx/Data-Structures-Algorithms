@@ -42,11 +42,10 @@ class Solution {
       
       for(int i =0; i<V; i++){
           if(!visited[i]){
-              parent[i] = -1;
+             parent[i] = -1;
              boolean ans =  bfs(i,adj, visited, parent);
-             if(ans){
+             if(ans)
                  return true;
-             }
           }
       }
       return false;
@@ -66,10 +65,9 @@ class Solution {
                     parent[i] = curr;
                     q.add(i);
                 }
-                else{
+                else
                    if(parent[curr]!=i)  return true;
-                   
-                }
+                
             }
         }
         return false;
