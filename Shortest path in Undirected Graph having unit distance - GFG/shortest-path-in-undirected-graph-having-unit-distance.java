@@ -33,6 +33,9 @@ class Solution {
     
     public int[] shortestPath(int[][] edges,int n,int m ,int src) {
         // Code here
+        //date : 5th april 2023
+        
+        //simple adj mat to adj list converion (cuz im lazy asf to interact w adj mat)
         ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>();
         for(int i = 0; i < n; i++) {
             adj.add(new ArrayList<>());
@@ -45,11 +48,13 @@ class Solution {
             adj.get(u).add(v);
             adj.get(v).add(u);
         }
+        
+        //simple bfs traversal of a adjlist 
         int V = adj.size();
-          Queue<Integer> q = new LinkedList<>();
+        Queue<Integer> q = new LinkedList<>();
         boolean [] visited = new boolean[V];
         int [] ans  = new int [V];
-         Arrays.fill(ans, -1);
+        Arrays.fill(ans, -1);
         ans[src] = 0;
         q.add(src);
         visited[src] = true;
@@ -59,11 +64,11 @@ class Solution {
                 if(!visited[i]){
                     visited[i] = true;
                     q.add(i);
+                    //only extra thing to be done is here
                     ans[i] = ans[curr]+1;
                 }
             }
         }
-        // System.out.println(adj.get(2).get(3));
         return ans;
         
     }
