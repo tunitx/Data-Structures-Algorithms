@@ -38,6 +38,9 @@ class Solution
     public static ArrayList<Integer> repeatedRows(int matrix[][], int m, int n)
     {
         //code here
+        //date : 7th may 2023
+        //cheers to aditya bhai
+        //lode ka hard ques
         ArrayList<Integer> ans = new ArrayList<>();
         HashSet<String> set = new HashSet<>();
         for(int i =0; i<matrix.length; i++){
