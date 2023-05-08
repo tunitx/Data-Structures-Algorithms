@@ -80,8 +80,7 @@ class Solution
             int curr = q.poll();
             ans[k++] = curr;
             for(int i : adj.get(curr)){
-               
-                if(indegree[i]==0) q.add(i);
+                if(--indegree[i]==0) q.add(i);
             }
         }
         return ans;
