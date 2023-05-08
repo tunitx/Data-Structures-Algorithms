@@ -64,6 +64,9 @@ class Solution
     static int[] topoSort(int V, ArrayList<ArrayList<Integer>> adj) 
     {
         // add your code here
+        //date : 8th may 2023
+        //look in the notes copy for proper description of whole algorithm
+        //also known as kahn's algorithm
         int [] ans = new int [V], indegree = new int [V];
         for(int i =0; i<V; i++)
             for(int j : adj.get(i)) indegree[j]++;
@@ -77,7 +80,7 @@ class Solution
             int curr = q.poll();
             ans[k++] = curr;
             for(int i : adj.get(curr)){
-                indegree[i]--;
+               
                 if(indegree[i]==0) q.add(i);
             }
         }
