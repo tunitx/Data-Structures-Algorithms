@@ -65,23 +65,21 @@ class Solution
     {
         // add your code here
         //date : 8th may 2023
+        //bfs zindabad
         //look in the notes copy for proper description of whole algorithm
         //also known as kahn's algorithm
         int [] ans = new int [V], indegree = new int [V];
         for(int i =0; i<V; i++)
             for(int j : adj.get(i)) indegree[j]++;
-        
         Queue<Integer> q = new LinkedList<>();
-        for(int i =0; i<V; i++){
+        for(int i =0; i<V; i++)
             if(indegree[i]==0) q.add(i);
-        }
         int k =0;
         while(!q.isEmpty()){
             int curr = q.poll();
             ans[k++] = curr;
-            for(int i : adj.get(curr)){
+            for(int i : adj.get(curr))
                 if(--indegree[i]==0) q.add(i);
-            }
         }
         return ans;
     }
