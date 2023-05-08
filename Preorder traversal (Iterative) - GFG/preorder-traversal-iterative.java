@@ -115,6 +115,9 @@ class Tree
     ArrayList<Integer> preOrder(Node root)
     {
         // Code
+        //date : 8th may 2023;
+        //quite similar to inorder traversal too
+        //a bit complicated, u may forget this solution in no time but its okay, its a worth it medium ques
         ArrayDeque<Node> stack = new ArrayDeque<>();
         ArrayList<Integer> ans = new ArrayList<>();
         Node curr = root;
@@ -125,8 +128,7 @@ class Tree
                 stack.push(curr);
                 curr = curr.left;
             }
-            curr = stack.pop();
-            curr =curr.right;
+            curr = stack.pop().right;
         }
         return ans;
     }
