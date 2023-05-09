@@ -68,19 +68,46 @@ class Solution
         //bfs zindabad
         //look in the notes copy for proper description of whole algorithm
         //also known as kahn's algorithm
-        int [] ans = new int [V], indegree = new int [V];
-        for(int i =0; i<V; i++)
-            for(int j : adj.get(i)) indegree[j]++;
-        Queue<Integer> q = new LinkedList<>();
-        for(int i =0; i<V; i++)
-            if(indegree[i]==0) q.add(i);
-        int k =0;
-        while(!q.isEmpty()){
-            int curr = q.poll();
-            ans[k++] = curr;
-            for(int i : adj.get(curr))
-                if(--indegree[i]==0) q.add(i);
+        // int [] ans = new int [V], indegree = new int [V];
+        // for(int i =0; i<V; i++)
+        //     for(int j : adj.get(i)) indegree[j]++;
+        // Queue<Integer> q = new LinkedList<>();
+        // for(int i =0; i<V; i++)
+        //     if(indegree[i]==0) q.add(i);
+        // int k =0;
+        // while(!q.isEmpty()){
+        //     int curr = q.poll();
+        //     ans[k++] = curr;
+        //     for(int i : adj.get(curr))
+        //         if(--indegree[i]==0) q.add(i);
+        // }
+        // return ans;
+        
+        
+       // *******************************************************************************
+        //* dfs based solution(much simpler)
+        //date : 9th may 2023
+        
+        ArrayDeque<Integer> stack = new ArrayDeque<>();
+        boolean v [] = new boolean[V];
+        
+        for(int i = 0; i<V; i++)
+            if(!v[i]) dfs(i, stack, adj, v);
+            
+        int [] ans = new int[V];
+        int k = 0;
+        while(!stack.isEmpty()){
+            ans[k++] = stack.pop();
         }
         return ans;
+    }
+    static void dfs(int s, ArrayDeque<Integer> stack, ArrayList<ArrayList<Integer>> adj, boolean [] v){
+        v[s] = true;
+        
+        for(int i : adj.get(s)) 
+            if(!v[i]) dfs(i, stack, adj, v);
+        
+        stack.push(s);
+        return;
     }
 }
