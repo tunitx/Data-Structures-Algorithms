@@ -124,16 +124,17 @@ class Node {
 class Solution {
     ArrayList<Integer> maximumValue(Node node) {
        //code here
+       //date : 10th may 2023
+       //simple level order traversal
+       //pls do a dry run of this question once as u didnt do it in the first go
        Queue<Node> q = new LinkedList<>();
        ArrayList<Integer> ans = new ArrayList<>();
        q.add(node);
-     
        while(!q.isEmpty()){
            int res = Integer.MIN_VALUE;
            int size = q.size();
            for(int i =0; i<size; i++){
              Node curr = q.poll();
-           
            res = Math.max(res, curr.data);
            if(curr.left!=null){
                
@@ -143,7 +144,6 @@ class Solution {
                
                 q.add(curr.right);
            }
-         
            }
              ans.add(res);
            
