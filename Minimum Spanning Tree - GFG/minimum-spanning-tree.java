@@ -36,6 +36,10 @@ public class Main{
 class Solution{
 	static int spanningTree(int V, int E, int e[][]){
 	    // Code Here. 
+	    //date : 10th may 2023
+	    //gaand faadu question
+	    //for revision refer to this link and then look in the copy for standard algorithm
+	    //link : https://www.youtube.com/watch?v=mJcZjjKzeqk
 	    ArrayList<ArrayList<pair>> adj = new ArrayList<ArrayList<pair>>();
 	    for(int i =0; i<V; i++) {
 	        adj.add(new ArrayList<pair>());
