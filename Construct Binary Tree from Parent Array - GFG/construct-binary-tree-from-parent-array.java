@@ -115,26 +115,23 @@ class Solution
         //simple hashmap based solution the main intuition is based on the pair thing
         //i lowkey impressed myself by this intuition ngl. good job tanish
         HashMap<Integer, pair> map = new HashMap<>();
-        for(int i =0; i<parent.length; i++){
-            map.put(i, new pair(new Node(i),0));
-        }
+        for(int i =0; i<parent.length; i++) map.put(i, new pair(new Node(i),0));
         
         Node root = null;
         for(int i =0; i<parent.length; i++){
-            if(parent[i]==-1){
-                root = map.get(i).node;
-            }
+            if(parent[i]==-1) root = map.get(i).node;
+            
             else{
                 Node par = map.get(parent[i]).node;
                 Node child = map.get(i).node;
                 
-                if(map.get(parent[i]).count ==0){
+                if(map.get(parent[i]).count==0){
                     par.left = child;
                    map.get(parent[i]).count++;
                 }
-                else{
+                else
                     par.right = child;
-                }
+
             }
         }
         return root;
