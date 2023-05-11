@@ -134,17 +134,16 @@ class Solution {
            int res = Integer.MIN_VALUE;
            int size = q.size();
            for(int i =0; i<size; i++){
-             Node curr = q.poll();
-           res = Math.max(res, curr.data);
-           if(curr.left!=null){
+            Node curr = q.poll();
+            res = Math.max(res, curr.data);
+            if(curr.left!=null){
                
                q.add(curr.left);
            }
-           if(curr.right!=null){
-               
+            if(curr.right!=null){
                 q.add(curr.right);
            }
-           }
+            }
              ans.add(res);
            
        }
