@@ -111,6 +111,9 @@ class Solution
     public static Node createTree(int parent[], int N)
     {
         //Your code here
+        //date : 11th may 2023
+        //simple hashmap based solution the main intuition is based on the pair thing
+        //i lowkey impressed myself by this intuition ngl. good job tanish
         HashMap<Integer, pair> map = new HashMap<>();
         for(int i =0; i<parent.length; i++){
             map.put(i, new pair(new Node(i),0));
