@@ -62,6 +62,11 @@ class Solution
     static int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S)
     {
         // Write your code here
+        //date : 12th may 2023
+        //different than sandeep jains algorithm as it was based on simplest implmentation
+        //this is second best implementation using priority queue
+        //little bit similar to prims algo, refer to this link and notes in copy while revising : 
+        // link : https://youtu.be/V6H1qAeB-l4
         PriorityQueue<pair> pq = new PriorityQueue<>((x,y)-> x.wt-y.wt);
         int [] dist = new int [V];
         Arrays.fill(dist, Integer.MAX_VALUE);
