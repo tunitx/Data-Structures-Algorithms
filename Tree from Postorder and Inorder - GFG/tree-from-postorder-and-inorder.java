@@ -67,6 +67,9 @@ class GfG
     //Function to return a tree created from postorder and inoreder traversals.
     Node buildTree(int in[], int post[], int n) {
         // Your code here
+        //date : 14th may 2023
+        //hard question, pls refer to this link while revising 
+        // yt link : https://www.youtube.com/watch?v=LgLRTaEMRVc
         HashMap<Integer, Integer> inorderMap = new HashMap<>();
         
         for(int i =0; i<n; i++){
