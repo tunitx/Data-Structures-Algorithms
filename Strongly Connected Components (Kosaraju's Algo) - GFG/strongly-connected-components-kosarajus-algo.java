@@ -50,6 +50,10 @@ class Solution
     public int kosaraju(int V, ArrayList<ArrayList<Integer>> adj)
     {
         //code here
+        //date : 14th may 2023
+        //first step involves finding toplogical sort of the tree
+        //second step involves finding tranpose of the graph
+        //third step involves doing dfs traversal of the new tranpose graph according to its topological sorting
         ArrayDeque<Integer> stack = new ArrayDeque<>();
         boolean v [] = new boolean[V];
         for(int i =0; i <V; i++){
