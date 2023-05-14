@@ -33,6 +33,8 @@ class Solution
     public List<String> AllPossibleStrings(String s)
     {
         // Code here
+        //date : 14th may 2023
+        //draw the recursion tree from scratch while revisiing
        List<String> list = new ArrayList<>();
         String str = "";
        helper(0, s, list, str);
@@ -44,9 +46,6 @@ class Solution
             if(str.length()>0) list.add(str);
             return;
        }
-           
-            
-        
         helper(i+1, s, list, str + s.charAt(i));
         helper(i+1, s, list, str);
     }
