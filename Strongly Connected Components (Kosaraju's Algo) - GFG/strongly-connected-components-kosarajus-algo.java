@@ -51,10 +51,10 @@ class Solution
     {
         //code here
         ArrayDeque<Integer> stack = new ArrayDeque<>();
-        boolean vis [] = new boolean[V];
-        for(int i =0; i<V; i++){
-            if(!vis[i]) {
-                dfs(i, adj, vis, stack);
+        boolean v [] = new boolean[V];
+        for(int i =0; i <V; i++){
+            if(!v[i]){
+                dfs1(i, adj,stack, v);
             }
         }
         
@@ -63,40 +63,39 @@ class Solution
         for(int i =0; i<V; i++){
             transpose.add(new ArrayList<Integer>());
         }
-        
-        for(int i =0; i<V; i++){
-            for(int j : adj.get(i)){
+        for(int i=0; i<V; i++){
+            for(int j: adj.get(i)){
                 transpose.get(j).add(i);
             }
         }
         int count =0;
-        Arrays.fill(vis, false);
+        Arrays.fill(v, false);
+        
         while(!stack.isEmpty()){
             int node = stack.pop();
-            
-            if(!vis[node]){
+            if(!v[node]){
                 count ++;
-                dfs2(node , transpose, vis);
+                dfs2(node, transpose, v);
             }
         }
         return count;
     }
-    public void dfs(int s, ArrayList<ArrayList<Integer>> adj, boolean [] vis,  ArrayDeque<Integer> st){
-        vis[s] = true;
+    public static void dfs1(int s, ArrayList<ArrayList<Integer>> adj, ArrayDeque<Integer> stack, boolean v []){
+        v[s] = true;
         
-        for(int i : adj.get(s)){
-            if(!vis[i]){
-                dfs(i, adj, vis, st);
+        for(int i :adj.get(s)){
+            if(!v[i]){
+                dfs1(i, adj, stack, v);
             }
         }
-        st.push(s);
+        stack.push(s);
     }
-    public void dfs2(int s, ArrayList<ArrayList<Integer>> adj, boolean [] vis){
-        vis[s] = true;
+    public static void dfs2(int s, ArrayList<ArrayList<Integer>> transpose, boolean v []){
+        v[s] = true;
         
-        for(int i : adj.get(s)){
-            if(!vis[i]){
-                dfs2(i, adj, vis);
+        for(int i : transpose.get(s)){
+            if(!v[i]){
+                dfs2(i, transpose, v);
             }
         }
     }
