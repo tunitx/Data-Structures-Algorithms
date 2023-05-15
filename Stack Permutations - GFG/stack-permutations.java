@@ -61,17 +61,18 @@ class GFG {
 class Solution {
     public static int isStackPermutation(int n, int[] ip, int[] op) {
         // code here
+        //date : 15th may 2023
+        //simple stack implementation using two pointer approach
+        //do a dry run of it while revising, its a bit conufusing when seen at first
         ArrayDeque<Integer> st = new ArrayDeque<>();
         int j =0;
         for(int i =0; i<ip.length; i++){
             st.push(ip[i]);
-            
             while(!st.isEmpty() && st.peek()==op[j]){
                 st.pop();
                 j++;
             }
         }
-        
         if(j==n && st.isEmpty()){
             return 1;
         }
