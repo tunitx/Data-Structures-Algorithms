@@ -54,7 +54,7 @@ class Solution
         }
         int initial_cap = W;
         double res =0;
-        Collections.sort(list, (a,b)-> 
+       Collections.sort(list, (a,b)-> 
         a.w*b.v -a.v*b.w);
         for(int i =0; i<n; i++){
             if(list.get(i).w<=initial_cap){
@@ -62,7 +62,7 @@ class Solution
                 initial_cap-=list.get(i).w;
             }
             else{
-                res+= (list.get(i).v)*((double)initial_cap/(double)list.get(i).w);
+                res+= (list.get(i).v)* ((double)initial_cap/(double)list.get(i).w);
                 return res;
             }
         }
