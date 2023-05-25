@@ -48,14 +48,27 @@ class Solution
     double fractionalKnapsack(int W, Item arr[], int n) 
     {
         // Your code here
+        //date : 23rd may 2023
+        //greedy approach
         ArrayList<pair> list = new ArrayList<>();
         for(int i =0; i<n; i++){
             list.add(new pair(arr[i].value, arr[i].weight));
         }
         int initial_cap = W;
         double res =0;
-       Collections.sort(list, (a,b)-> 
-        a.w*b.v -a.v*b.w);
+        //i dont really understand the logic behind this shit cuz we can instead just find ratios of the 
+        //values in decreasing order but wtv just revise it once u come back here later 
+        
+        //update : 25 may 2023
+        //the reason why we have used this instead of ratio exp is cuz the divide exp gives a double exp
+        //and it is not really accpeted in lambda expressions so we simplify exp by using cross multiplication
+       
+    //   Collections.sort(list, (a,b)-> 
+    //this wont work
+    //     (double)(b.v/b.w) - (double)(a.v/a.w));
+    
+    Collections.sort(list, (a,b)->
+    a.w*b.v - a.v*b.w );
         for(int i =0; i<n; i++){
             if(list.get(i).w<=initial_cap){
                 res +=list.get(i).v;
