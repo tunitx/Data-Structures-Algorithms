@@ -70,8 +70,10 @@ class GFG {
 class Solution {
     public static int overlap(int N, int[][] intervals) {
         // code here
+        //date : 30th may 2023 
+        //priority queue based solution, do a dry run when revising 
         PriorityQueue<Integer> q = new PriorityQueue<>((a,b)-> a-b);
-        Arrays.sort(intervals, (a,b)-> a[0]-b[0]);
+        Arrays.sort(intervals, (a,b) -> a[0]-b[0]);
         int res =0;
         for(int [] arr : intervals){
             q.add(arr[1]);
@@ -83,11 +85,3 @@ class Solution {
         return res;
     }
 }
-class pair{
-    int s, e;
-    pair(int s, int e){
-        this.s = s;
-        this.e = e;
-    }
-}
-        
