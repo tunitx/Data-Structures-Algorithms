@@ -35,16 +35,16 @@ class GFG{
 // User function Template for Java
 
 class Solution{
-    static int [][] mat;
+
     static ArrayList<ArrayList<Integer>> nQueen(int n) {
         // code here
     ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
-    mat = new int[n][n];
-    solveRec(0, n, ans);
+     int [][] mat = new int[n][n];
+    solveRec(0, n, ans, mat);
     // Collections.sort(ans, (a,b)-> a.get(0)-b.get(0));
     return ans;
     }
-    static void  solveRec(int col, int n,  ArrayList<ArrayList<Integer>> ans){
+    static void  solveRec(int col, int n,  ArrayList<ArrayList<Integer>> ans, int [][]mat){
         if(col == n){
             ArrayList< Integer> temp = new ArrayList<>();
             for(int i =0; i<n; i++){
@@ -61,7 +61,7 @@ class Solution{
               
             if(isSafe(i, col, mat,n)){
                 mat[i][col] = 1;
-                solveRec(col+1, n, ans);
+                solveRec(col+1, n, ans, mat);
                 mat[i][col] = 0;
                   
                 }
@@ -74,8 +74,8 @@ class Solution{
     
     static boolean isSafe(int row, int col, int [][] board, int n){
 
-              int x =row;
-        int y=col;
+    int x =row;
+       int y=col;
      //row
       while(y>=0){
           if(board[x][y]==1)
