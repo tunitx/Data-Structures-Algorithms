@@ -35,72 +35,62 @@ class GFG{
 // User function Template for Java
 
 class Solution{
-
     static ArrayList<ArrayList<Integer>> nQueen(int n) {
         // code here
-    ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
-     int [][] mat = new int[n][n];
-    solveRec(0, n, ans, mat);
-    // Collections.sort(ans, (a,b)-> a.get(0)-b.get(0));
-    return ans;
+        int [][] mat = new int[n][n];
+        var ans = new ArrayList<ArrayList<Integer>>();
+        solveRec(0, mat, ans,n);
+        return ans;
     }
-    static void  solveRec(int col, int n,  ArrayList<ArrayList<Integer>> ans, int [][]mat){
+     public static void solveRec(int col, int [][] mat, ArrayList<ArrayList<Integer>> ans, int n){
         if(col == n){
-            ArrayList< Integer> temp = new ArrayList<>();
+            var temp = new ArrayList<Integer>();
             for(int i =0; i<n; i++){
-                for(int j =0; j<n; j++){
-                    if(mat[j][i] ==1){
+                for(int j=0; j<n; j++){
+                    if(mat[j][i]!=0){
                         temp.add(j+1);
                     }
                 }
             }
             ans.add(temp);
-            return ;
-        }
-        for(int i =0; i<n; i++){
-              
-            if(isSafe(i, col, mat,n)){
-                mat[i][col] = 1;
-                solveRec(col+1, n, ans, mat);
-                mat[i][col] = 0;
-                  
-                }
-               
+            return;
+         }
+
+        for(int row =0; row<n; row++){
+            if(isValid(row, col, mat)){
+                mat[row][col] = 1;
+                solveRec(col+1, mat, ans, n);
+                mat[row][col] = 0;
             }
-             return;
         }
-       
-
-    
-    static boolean isSafe(int row, int col, int [][] board, int n){
-
-    int x =row;
-       int y=col;
-     //row
-      while(y>=0){
-          if(board[x][y]==1)
-          return false;
-           y--;
-      }
-     //upper left diagonal
-     x=row;
-     y=col;
-     while(y>=0 && x>=0){
-          if(board[x][y]==1)
-          return false;
-           y--;
-           x--;
-      }
-     x=row;
-     y=col;
-     //lower left diagonal
-     while(y>=0 && x<n){
-          if(board[x][y]==1)
-          return false;
-           y--;
-           x++;
-      }
-      return true;
-
+    }
+     public static boolean isValid(int row, int col, int [][] mat){
+        int x = row;
+        int y = col;
+        while(x>=0 ){
+            if(mat[x][col]==1){
+                return false;
+            }
+            x--;
+        }
+        x= row;
+        while(y>=0){
+            if(mat[x][y]==1) return false;
+            y--;
+        }
+        y = col;
+        while(x>=0 && y>=0){
+            if(mat[x][y] ==1) return false;
+            x--;
+            y--;
+        }
+        x= row;
+        y= col;
+        while(x<mat.length && y>=0){
+            if(mat[x][y]==1) return false;
+            x++;
+            y--;
+        }
+        return true;
     }
 }
