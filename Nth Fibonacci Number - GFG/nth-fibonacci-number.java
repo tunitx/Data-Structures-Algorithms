@@ -22,16 +22,30 @@ class GFG {
 
 //User function Template for Java
 class Solution {
+   static long [] dp;
     static long nthFibonacci(long n){
         // code here
-        long prev1 = 0;
-        long prev2 = 1;
+        // long prev1 = 0;
+        // long prev2 = 1;
        
-        for(int i =2; i<=n; i++){
-            long curr = (prev1+prev2)%1000000007;
-            prev1 = prev2;
-            prev2 = curr;
+        // for(int i =2; i<=n; i++){
+        //     long curr = (prev1+prev2)%1000000007;
+        //     prev1 = prev2;
+        //     prev2 = curr;
+        // }
+        // return prev2;
+         dp = new long [(int)n+1];
+        Arrays.fill(dp, -1);
+        return findNthFib( n);
+        
+    }
+    static long findNthFib(long n ){
+        if(dp[(int)n] ==-1){
+            long res;
+            if(n==0 || n==1) res = n;
+            else res = findNthFib(n-1) + findNthFib(n-2);
+            dp[(int)n] = res%1000000007;
         }
-        return prev2;
+        return dp[(int)n];
     }
 }
