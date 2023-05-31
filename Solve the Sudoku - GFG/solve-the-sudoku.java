@@ -48,42 +48,56 @@ class Solution
     static boolean SolveSudoku(int grid[][])
     {
         // add your code here
+        //date : 31st may 2023
+        //take a glance at copy to understand the below isValid functions's formula and the recursion behind it
+        
        for(int i =0; i<grid.length; i++){
            for(int j =0; j<grid[0].length; j++){
+               //found an empty cell, so now try filling values from 1-9 in it
                if(grid[i][j]==0){
-                   
+                   //filler function
                    for(int num = 1; num<=9; num++){
-                       
+                       //now check if the number (num) putting in grid is feasible or not
                        if(isValid(grid, num, i,j)){
+                           //if it is, put it and then recur for next empty cell
                            grid[i][j] = num;
                            if(SolveSudoku(grid)){
                                return true;
                            }
+                            //now if putting this num in this empty cell doesnt allow other empty cell in recursion
+                            //to get filled, it would return false
                            else{
+                               //and since the future call returns falls, we have to remove the current number 
+                               // and try for nexy num+1 value and so on
                                grid[i][j] = 0;
                            }
                        }
                    }
+                   //and if just in case, as said for the future call, it cant fill any number in it, it returns false to its parent caller 
+                   //indicating that the parent need to change its value in its empty cell so that the child can fit a value in its empty cell
                    return false;
                }
            }
        }
+       //at last if a call comes which doesnt have any empty cell left, then it return true to its parent 
+       //and the parent to its parent and so on the function ends
        return true;
     }
     
     static boolean isValid(int [][] grid, int num, int row, int col){
+        //checking for each column and row
         for(int i =0; i<9; i++){
-            if(grid[row][i]==num){
-                return false;
-            }
-            if(grid[i][col]== num){
-                return false;
-            }
-            if(grid[3*(row/3) + (i/3)][3*(col/3) + (i%3)]== num){
-                return false;
-            }
+        //row and col checking condtion if it is already filled by the number we want
+            if(grid[row][i]==num || grid[i][col]== num) return false;
+            //this condtion checks the current grid in which row and col lies
+            // formula : 
+            //grid row traversal : 3*(row/3) + (i/3)
+            // grid col traversal : 3*(col/3) + (i % 3)
+            if(grid[3*(row/3) + (i/3)][3*(col/3) + (i%3)]== num) return false;
+           
         }
-        return true;
+          return true;
+       
     }
     
     
