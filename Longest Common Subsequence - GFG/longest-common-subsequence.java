@@ -31,6 +31,8 @@ class Solution
     static int lcs(int x, int y, String s1, String s2)
     {
         // your code here
+        //date : 2 may 2023 
+        //memoization based solution
         dp = new int [x+1][y+1];
         for(int i =0; i<x+1; i++){
             for(int j =0; j<y+1; j++){
