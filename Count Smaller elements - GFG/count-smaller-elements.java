@@ -38,6 +38,8 @@ class Solution {
     int[] constructLowerArray(int[] nums, int n) {
         // code here
         // int n = nums.length;
+        //date : 2nd june 2023
+        //not done by myself
         List<Integer> counts = new ArrayList<>();
         int[] smallerCounts = new int[n];
         Pair[] pairs = new Pair[n];
