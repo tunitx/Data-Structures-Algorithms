@@ -28,6 +28,8 @@ class Solution
 	public static ArrayList<Integer> findCommon(Node root1,Node root2)
     {
         //code here
+        //date : 3rd june 2023
+        //simple hashSet based solution
         var ans = new ArrayList<Integer>();
         set = new HashSet<>();
         preOrder(root1);
