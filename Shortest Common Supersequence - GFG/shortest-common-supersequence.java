@@ -43,6 +43,8 @@ class Solution
     public static int shortestCommonSupersequence(String X,String Y,int m,int n)
     {
         //Your code here
+        //date : 4rth june 2023
+        //lcs variation sheet
         var dp = new int[m+1][n+1];
         for(int i =0; i<m+1; i++){
             for(int j =0; j<n+1; j++){
