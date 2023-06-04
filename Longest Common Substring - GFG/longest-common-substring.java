@@ -32,6 +32,9 @@ class GFG
 class Solution{
     int longestCommonSubstr(String s1, String s2, int n, int m){
         // code here
+        //lcs variation problem
+        //date : 6 june 2023
+        //bottom up approach/tabulation
         var dp = new int[n+1][m+1];
         for(int i =0; i<dp.length; i++){
             dp[i][0]=0;
