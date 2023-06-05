@@ -76,11 +76,6 @@ class Solution
 		//code here
 		j=0;
 		int n = str.length();
-        // var pq = new PriorityQueue<pair>((a,b)-> {
-        //     if(a.freq == b.freq) return 1;
-        //     else return b.freq - a.freq;
-        // });
-        // pair prev = new pair('#', -1);
         int max = Integer.MIN_VALUE;
         var map = new HashMap<Character, Integer>();
         for(int i =0; i<str.length(); i++){
@@ -99,8 +94,6 @@ class Solution
         //we cant sort map so using a priority queue
         PriorityQueue < Character > pq = new PriorityQueue < > ((n1, n2)-> map.get(n2) - map.get(n1));
         map.forEach((key,val)->pq.add(key));
-        //keep filling the character in alternate position
-        //here we start filling ele with max freq
         while (!pq.isEmpty()) {
            Character t = pq.remove();
             fill(t, map.get(t), ans);
