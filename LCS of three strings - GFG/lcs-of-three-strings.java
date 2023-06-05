@@ -29,6 +29,7 @@ class Solution
     int LCSof3(String A, String B, String C, int n1, int n2, int n3) 
     { 
         // code here
+        //date : 5th june 2023
         var dp = new int[n1+1][n2+1][n3+1];
         for(int i =0; i<n1+1; i++){
             dp[i][0][0] =0;
