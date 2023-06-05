@@ -133,10 +133,8 @@ class Solution
             return;
         }
         ans = Math.min(ans, Math.abs(k-root.data));
-        if(root.data>k){
-             preOrder(root.left, k);
-        }
-        else   preOrder(root.right, k);
+        preOrder(root.left, k);
+        preOrder(root.right, k);
     }
     
 }
