@@ -33,6 +33,8 @@ public class GFG {
 class Solution {
     int getPairsCount(int[] arr, int n, int k) {
         // code here
+        //date : 5th june 2023
+        //simple hashing based solution, arr[i] = k-arr[j]
         int count =0;
         var map = new HashMap<Integer, Integer> ();
         for(int i=0; i<n; i++){
