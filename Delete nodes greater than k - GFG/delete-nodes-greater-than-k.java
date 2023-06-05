@@ -126,6 +126,7 @@ class Solution
          public Node deleteNode(Node root,int k)
          {
          //add code here.
+         //date : 5th june 2023
          if(root == null) return null;
          if(root.data>=k) return deleteNode(root.left, k);
          root.right = deleteNode(root.right, k);
