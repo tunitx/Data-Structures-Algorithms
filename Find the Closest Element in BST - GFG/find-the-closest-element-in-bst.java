@@ -120,14 +120,14 @@ class Solution
     static int minDiff(Node  root, int K) 
     { 
         // Write your code here
-        ans = Integer.MAX_VALUE;;
+        //date : 5th june 2023
+        //simple preorder traversal
+        ans = Integer.MAX_VALUE;
         preOrder(root, K);
         return ans;
     } 
     static void preOrder(Node root, int k){
         if(root == null ) return;
-        
-        // int abs = Math.abs(k- root.data);
         if(k ==root.data){
             ans = 0;
             return;
