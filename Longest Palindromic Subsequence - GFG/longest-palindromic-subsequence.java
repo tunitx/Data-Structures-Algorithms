@@ -29,6 +29,8 @@ class Solution
     public int longestPalinSubseq(String S)
     {
         //code here
+        //date : 5th june 2023
+        //lcs varition based question
         var rev = new StringBuilder(S).reverse().toString();
         // return 0;
         var dp = new int[S.length()+1][S.length()+1];
