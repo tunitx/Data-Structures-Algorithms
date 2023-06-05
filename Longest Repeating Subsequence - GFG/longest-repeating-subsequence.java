@@ -30,6 +30,9 @@ class Solution
     public int LongestRepeatingSubsequence(String str)
     {
         // code here
+        //date : 5th june 2023
+       // lcs variation problem
+        
         var dp = new int[str.length()+1][str.length()+1];
         for(int i =0; i<dp.length; i++){
            for(int j =0; j<dp.length; j++){
