@@ -137,8 +137,9 @@ static void  findPre(Node root, int key, int ans1){
             ans1 = root.data;
             pre = root;
            
+            findPre(root.right, key,ans1);
         }
-         findPre(root.right, key,ans1);
+        
        
     }
     else{
@@ -151,9 +152,9 @@ static void findSuc(Node root, int key, int ans2){
         if(ans2>root.data){
            ans2 = root.data;
            suc = root;
-          
+           findSuc(root.left, key, ans2);
        }
-        findSuc(root.left, key, ans2);
+       
    }
       
    else{
