@@ -111,6 +111,9 @@ class Solution
     public static ArrayList<Integer> KDistanceNodes(Node root, int target , int k)
     {
         // return the sorted list of all nodes at k dist
+        
+        //date : 8th june 2-23
+        //hardest question i have ever laid my eyes on ever
         var ans = new ArrayList<Integer>();
         kthDistanceNodes(root, target, k, ans);
         Collections.sort(ans);
@@ -120,7 +123,6 @@ class Solution
         if(root == null) return -1;
         
         if(root.data==target){
-            //fn call\
         distanceFromDownward(root, target, k, ans);
             return 1;
         }
