@@ -27,6 +27,7 @@ class GFG
 class Solution{
     int findMinInsertions(String S){
         // code here
+        //date : 9th june 2023
         String rev = new StringBuilder(S).reverse().toString();
         var dp = new int [S.length()+1][S.length()+1];
         for(int i =0; i<dp.length; i++){
