@@ -33,6 +33,7 @@ class Solution
     static int findSubArraySum(int arr[], int N, int k)
     {
         // code here
+        //date : 10th june 2023
         var map = new HashMap<Integer, Integer>();
         map.put(0,1);
         int count =0;
