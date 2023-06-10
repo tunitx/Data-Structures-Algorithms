@@ -33,6 +33,8 @@ class Solution
 {
     int numberOfSubarrays(int arr[], int N, int target){
         // code here
+        //date: 10th june 2023
+        //sliding window solution, kinda typical, pls do a dry run to understand the logic
         int sum =0;
         int start =0;
         int end = 0;
@@ -54,11 +56,8 @@ class Solution
                    count++;
                    start++;
                }
-               
                start++;
                count++;
-            //   sum++;
-               
            }
            else{
                int i = start;
