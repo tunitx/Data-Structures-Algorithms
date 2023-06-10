@@ -70,13 +70,9 @@ class Solution
            }
         }
         // end--;
-          while(start<end&&arr[start]!=1){
+          while(start<end&&arr[start]==0){
 
-            if(sum==target){
-
-                count++;
-
-            }
+           count++;
 
             start++;
 
