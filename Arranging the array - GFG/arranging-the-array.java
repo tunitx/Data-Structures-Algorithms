@@ -44,6 +44,7 @@ class Solution {
     public void Rearrange(int arr[], int n)
     {
         // Your code goes here
+        //date : 10th june 2023/
         var neg = new int[n];
         var pos = new int[n];
         Arrays.fill(neg, Integer.MIN_VALUE);
@@ -56,13 +57,12 @@ class Solution {
                 pos[i] = arr[i];
             }
         }
-        int k =0;
+        var k =0;
         for(int i =0; i<arr.length; i++){
            if(neg[i]!=Integer.MIN_VALUE){
                arr[k++] = neg[i];
            }
         }
-        // k=0;
         for(int i =0; i<n; i++){
             if(pos[i]!=Integer.MAX_VALUE){
                 arr[k++] = pos[i];
