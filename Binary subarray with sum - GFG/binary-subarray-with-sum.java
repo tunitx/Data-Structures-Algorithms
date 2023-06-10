@@ -54,10 +54,10 @@ class Solution
                    count++;
                    start++;
                }
-               sum--;
+               
                start++;
                count++;
-               sum+=arr[end];
+            //   sum++;
                
            }
            else{
@@ -69,20 +69,10 @@ class Solution
                count++;
            }
         }
-        // end--;
           while(start<end&&arr[start]==0){
-
-           count++;
-
+            count++;
             start++;
-
         }
-            // while(start<end && arr[start]!=1){
-            //   if(sum==target){
-            //       count++;
-            //   }
-            //   start++;
-            // }
             return count;
     
     }
