@@ -27,27 +27,28 @@ class GFG
 class Solution{
     String longestPalindrome(String S){
         // code here
+        //date : 6th june 2023
+        //tabulation method, bottom - up approach 
         int n = S.length();
         boolean dp [][] = new boolean[n][n];
         
         for(int i =0; i<n; i++){
             dp[i][i] = true;
         }
-         int start =0;
+        int start =0;
         int end =0;
-boolean firstCheck = true;
+        boolean firstCheck = true;
         for(int i =0; i<n-1; i++){
             if(S.charAt(i)== S.charAt(i+1)){
                 dp[i][i+1] = true;
-                if(firstCheck){
-                start = i;
-                end = i+1;
-                firstCheck = false;
-            }
-            }
+                    if(firstCheck){
+                     start = i;
+                     end = i+1;
+                     firstCheck = false;
+                }
+        }
             
         }
-        // System.out.println(S.substring(start, end+1));
        
         
         for(int k =3; k<=n; k++){
