@@ -97,7 +97,8 @@ class Solution
 {
 	Node sortList(Node head) {
 		// Your code here
-		Node curr = head;
+//      brute force approach
+		var curr = head;
 		var list = new ArrayList<Integer>();
 		while(curr!=null){
 		    list.add(curr.data);
