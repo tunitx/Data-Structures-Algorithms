@@ -30,49 +30,45 @@ class Solution
 {
     public int minInsertions(int arr[], int n) 
 	{ 
-        //code here.
-    //      var lis = new int [n];
-	   //var len =1;
-	   //lis[0] = arr[0];
+        // code here.
+         var lis = new int [n];
+	   var len =1;
+	   lis[0] = arr[0];
 	   
-	   //for(var i = 1; i<n; i++){
-	   //    if(arr[i]>=lis[len-1]){
-	   //        lis[len] = arr[i];
-	   //        len++;
-	   //    }
-	   //    else{
-	   //        int ceil = findCeil(lis, 0, len-1, arr[i]);
-	   //        lis[ceil] = arr[i];
-	   //    }
-	   //}
-	   //return n-len;
+	   for(var i = 1; i<n; i++){
+	       if(arr[i]>=lis[len-1]){
+	           lis[len] = arr[i];
+	           len++;
+	       }
+	       else{
+	           int ceil = findCeil(lis, 0, len-1, arr[i]);
+	           lis[ceil] = arr[i];
+	       }
+	   }
+	   return n-len;
 	   
-	   
-	   
-	   
-	    var dp = new int [n];
-        
-        dp[0] = 1;
-        var maxLen = 1;
-        for(int i =1 ; i<n; i++){
-            dp[i] = 1;
-            for(int j =0; j<i; j++){
-                if(arr[j]<=arr[i]){
-                    dp[i] = Math.max(dp[i], dp[j]+1);
-                }
-            }
-            maxLen = Math.max(dp[i], maxLen);
-        }
-        // int res = dp[0];
-        // for(int i =1 ; i<n; i++){
-        //     res = Math.max(res, dp[i]);
-        // }
-        return n-maxLen;
+	// var dp = new int [n];
+    //     dp[0] = 1;
+    //     // var maxLen = 1;
+    //     for(int i =1 ; i<n; i++){
+    //         dp[i] = 1;
+    //         for(int j =0; j<i; j++){
+    //             if(arr[j]<=arr[i]){
+    //                 dp[i] = Math.max(dp[i], dp[j]+1);
+    //             }
+    //         }
+            
+    //     }
+    //     int maxLen = dp[0];
+    //     for(int i =1 ; i<n; i++){
+    //         maxLen = Math.max(maxLen, dp[i]);
+    //     }
+    // return n-maxLen;
 	} 
 		public int findCeil(int [] lis, int start, int end, int target){
 	    while(start<end){
 	        var mid = (start+end)/2;
-	        if(lis[mid]>=target){
+	        if(lis[mid]>target){
 	            end = mid;
 	        }
 	        else{
