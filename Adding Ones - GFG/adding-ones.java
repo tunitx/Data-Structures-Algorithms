@@ -49,10 +49,11 @@ class Solution {
     public static void update(int arr[], int n, int updates[], int k)
     {
         // Your code goes here
+        //date : 11th june 2023
+        //lol not the best approach but yeah okaish
         for(int i =0; i<k; i++){
             int index = updates[i] -1;
             for(int j =index; j<n; j++){
-                
                     arr[j] ++;
             }
         }
