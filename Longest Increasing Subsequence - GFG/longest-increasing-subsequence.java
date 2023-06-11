@@ -43,6 +43,8 @@ class Solution
     static int longestSubsequence(int size, int arr[])
     {
         // code here
+        //date : 11th june 2023
+        //LIS question, this can be done by dp as well in n*2 time 
        var tail = new int[size];
        int len = 1;
        tail[0] = arr[0];
