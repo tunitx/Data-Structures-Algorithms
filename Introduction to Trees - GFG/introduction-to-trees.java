@@ -28,6 +28,8 @@ class GFG {
 class Solution {
     static int countNodes(int i) {
         // code here
+        //date : 11 june 2023
+        //lol simple formula, just consider the tree as a complete binary tree
         return (int)Math.pow(2, i-1);
     }
 }
