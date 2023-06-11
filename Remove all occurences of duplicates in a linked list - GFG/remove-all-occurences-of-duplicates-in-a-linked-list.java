@@ -82,6 +82,8 @@ class Solution
     public static Node removeAllDuplicates(Node head)
     {
         //code here
+        //date : 11th june 2023
+        //simple linked list traversal, do a dry run of the second testcase for better understanding
         if(head == null || head.next == null) 
             return head; 
         var curr = head;
