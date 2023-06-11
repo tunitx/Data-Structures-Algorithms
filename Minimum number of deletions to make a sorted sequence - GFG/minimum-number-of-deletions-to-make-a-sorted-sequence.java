@@ -29,6 +29,8 @@ class Solution
 	public int minDeletions(int arr[], int n) 
 	{ 
 	   //code here.
+	   //date : 11th june 2023
+	   //longest increasing subsequence problem variation
 	   var lis = new int [n];
 	   var len =1;
 	   lis[0] = arr[0];
