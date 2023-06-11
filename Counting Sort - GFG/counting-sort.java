@@ -29,6 +29,8 @@ class Solution
     public static String countSort(String arr)
     {
         // code here
+        //date : 11th june 2023
+        //simple counting sort principle used
         String str  = "";
         var ch = arr.toCharArray();
         var freq = new int [26];
