@@ -43,7 +43,7 @@ class Solution{
     }
     public static int helper(int index, int rodLen, int [] price, int n , int [][] dp){
         //base conditions
-        if(rodLen ==0){
+        if(rodLen ==0 || rodLen <0){
             return 0;
         }
         if(index == n){
