@@ -33,13 +33,12 @@ public class Main {
 class Solution {
     int[] kLargest(int[] arr, int n, int k) {
         // code here
+        //date : 13th june 2023
+        //simple priority queue based solution
         var pq = new PriorityQueue<Integer>(Collections.reverseOrder());
-        for(var i : arr)
-            pq.add(i);
+        for(var i : arr) pq.add(i);
         var ans = new int [k];
-        for(int i=0; i<k; i++){
-            ans[i] = pq.poll();
-        }
+        for(int i=0; i<k; i++) ans[i] = pq.poll();
         return ans;
     }
 }
