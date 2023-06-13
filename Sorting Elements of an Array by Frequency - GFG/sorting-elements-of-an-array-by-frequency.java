@@ -55,14 +55,12 @@ class Solution
           }
         });
         var map = new HashMap<Integer, Integer>();
-        for(var i =0; i<n; i++){
+        for(var i =0; i<n; i++)
             map.put(arr[i], map.getOrDefault(arr[i], 0)+1);
             
-        }
-       for (Map.Entry<Integer,Integer> e : map.entrySet()) {
-            var p = new pair(e.getKey(), e.getValue());
-            pq.add(p);
-       }
+        for (Map.Entry<Integer,Integer> e : map.entrySet()) 
+            pq.add(new pair(e.getKey(), e.getValue()));
+
         var ans = new ArrayList<Integer>();
         while(!pq.isEmpty()){
             var p = pq.poll();
