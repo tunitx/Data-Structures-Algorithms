@@ -44,6 +44,8 @@ class Solution
     static ArrayList<Integer> sortByFreq(int arr[], int n)
     {
         // add your code here
+        //date : 13th june 2023
+        //simple hashmap + priority Queue based solution
         var pq = new PriorityQueue<pair>((a,b)->{
           if(a.freq == b.freq){
               return a.val - b.val;
@@ -61,11 +63,10 @@ class Solution
             var p = new pair(e.getKey(), e.getValue());
             pq.add(p);
        }
-        int k =0; 
         var ans = new ArrayList<Integer>();
         while(!pq.isEmpty()){
             var p = pq.poll();
-            int freq = p.freq;
+            var freq = p.freq;
             while(freq>0){
                 ans.add(p.val);
                 freq--;
@@ -75,7 +76,7 @@ class Solution
     }
 }
 class pair{
-    int val,  freq;
+    int val,freq;
     pair(int val, int freq){
         this.val = val;
         this.freq = freq;
