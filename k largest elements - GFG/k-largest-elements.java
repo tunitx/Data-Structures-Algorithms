@@ -33,12 +33,12 @@ public class Main {
 class Solution {
     int[] kLargest(int[] arr, int n, int k) {
         // code here
-        int [] ans = new int [k];
-        Arrays.sort(arr);
-        int idx = arr.length-1;
-        for(int i =0; i<k; i++){
-            ans[i] = arr[idx];
-            idx--;
+        var pq = new PriorityQueue<Integer>(Collections.reverseOrder());
+        for(var i : arr)
+            pq.add(i);
+        var ans = new int [k];
+        for(int i=0; i<k; i++){
+            ans[i] = pq.poll();
         }
         return ans;
     }
