@@ -27,8 +27,6 @@ class GFG
 class Solution{
     static String longestPalin(String S){
         // code here
-        //date : 6th june 2023
-        //tabulation method, bottom - up approach 
         int n = S.length();
         boolean dp [][] = new boolean[n][n];
         
