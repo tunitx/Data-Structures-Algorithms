@@ -32,9 +32,7 @@ class Solution
             dp[i][j] = -1;
         }
     
-      int ans =  helper(pattern.length(), str.length(), pattern, str, dp);
-      if(ans == -1 || ans ==0) return 0;
-      return 1;
+      return helper(pattern.length(), str.length(), pattern, str, dp);
        
     }
     int helper(int x, int y, String pattern, String str, int [][] dp){
