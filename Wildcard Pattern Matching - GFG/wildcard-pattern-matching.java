@@ -26,6 +26,8 @@ class Solution
     int wildCard(String pattern, String str)
     {
         // Your code goes here
+        //date : 15th june 2023
+        //complicated dp top down approach
         var dp = new int[pattern.length()+1][str.length()+1];
         for(int i =0; i<dp.length; i++){
             for(int j =0; j<dp[0].length; j++)
