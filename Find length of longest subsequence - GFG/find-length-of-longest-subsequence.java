@@ -29,13 +29,9 @@ class Solution
     int maxSubsequenceSubstring(String X, String Y, int N, int M) 
     {
         // code here
+        //date : 5th june 2023
+        //lcs
         var dp = new int[N+1][M+1];
-        // for(int i =0; i<N+1; i++){
-        //     dp[i][0] = 0;
-        // }
-        // for(int i =0; i<M+1; i++){
-        //     dp[0][i] = 0;
-        // }
         int max =0;
         for(int i =1; i<dp.length; i++){
             for(int j =1; j<dp[0].length; j++){
