@@ -30,28 +30,31 @@ class Solution
     public int LongestRepeatingSubsequence(String str)
     {
         // code here
-        //date : 5th june 2023
-       // lcs variation problem
+         // code here
+        int n = str.length();
         
-        var dp = new int[str.length()+1][str.length()+1];
-        for(int i =0; i<dp.length; i++){
-           for(int j =0; j<dp.length; j++){
-               dp[i][j] = -1;
-           }
-        }
-        return lcs(str, str.length(), str.length(), dp);
-    }
-    public int lcs(String str, int x, int y, int [][] dp){
-        if(dp[x][y]!=-1) return dp[x][y];
-        if(x==0 || y==0) dp[x][y] =0;
-        else{
-            if(str.charAt(x-1) == str.charAt(y-1) && x!=y){
-                dp[x][y] = 1 + lcs(str, x-1, y-1, dp);
+        int[][] dp = new int[n+1][n+1];
+        
+        for(int i=0;i<=n ; i++){
+            
+            for(int j=0;j<=n ; j++){
+                
+                if(i==0 || j==0){
+                    dp[i][j] = 0;
+                }
+                
+                else{
+                    
+                    if(str.charAt(i-1)== str.charAt(j-1) && i!=j){
+                        dp[i][j] = 1+ dp[i-1][j-1];
+                    }
+                    else{
+                        dp[i][j] = Math.max(dp[i-1][j] , dp[i][j-1]);
+                    }
+                }
             }
-            else{
-                dp[x][y] = Math.max(lcs(str, x-1, y , dp), lcs(str, x, y-1, dp));
-            }
         }
-        return dp[x][y];
+        
+        return dp[n][n];
     }
 }
