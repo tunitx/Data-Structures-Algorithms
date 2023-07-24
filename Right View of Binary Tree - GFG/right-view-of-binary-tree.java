@@ -132,6 +132,8 @@ class Solution{
     //Function to return list containing elements of right view of binary tree.
     ArrayList<Integer> rightView(Node node) {
         //add code here.
+
+        //add code here.
         //date : 29th march 2023
         Deque<Node> q = new ArrayDeque<>();
         ArrayList<Integer>  list = new ArrayList<>();
@@ -155,7 +157,5 @@ class Solution{
         }
        return list;
     }
-    
 }
-
 
