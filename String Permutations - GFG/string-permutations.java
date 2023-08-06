@@ -31,6 +31,8 @@ class Main {
 // } Driver Code Ends
 
 
+
+
 //User function Template for Java
 
 
@@ -40,33 +42,31 @@ class Solution
     {
         //Your code here
         ArrayList<String> ans = new ArrayList<>();
-        helper(0, S, ans);
+        findPerm(ans,0,S);
         Collections.sort(ans);
         return ans;
     }
-    void helper(int index, String str, ArrayList<String> ans){
-        //base condtion
-        if(index == str.length()){
-            if(!ans.contains(str)){
-                ans.add(str);
-            }
-            return;
-        }
-        
-        for(int curr = index; curr<str.length(); curr++){
-            str = swap(curr, index, str);
-            helper(index+1, str, ans);
-           str =  swap(curr, index, str);
-        }
-        return;
-    }
-    
-    String swap(int i, int j, String str){
-        char [] arr = str.toCharArray();
-        char temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-        return String.valueOf(arr);
-    }
-	   
+	 
+	 static void findPerm(ArrayList<String> ans ,int indx, String S)
+	 {
+	     if(indx == S.length())
+	     {
+	             ans.add(S);
+	             return;
+	     }
+	     
+	     for(int i=indx;i<S.length();i++)
+	     {
+	       StringBuilder string = new StringBuilder(S);
+	       char ch1 = string.charAt(indx);
+	       char ch2 = string.charAt(i);
+               string.setCharAt(i, ch1);
+               string.setCharAt(indx,ch2);
+               S = string.toString();
+               findPerm(ans,indx+1,S);
+               string.setCharAt(i, ch2);
+               string.setCharAt(indx,ch1);
+               S = string.toString();
+	     }
+	 }
 }
