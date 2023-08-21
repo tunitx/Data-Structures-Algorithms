@@ -40,7 +40,8 @@ class Solution
     public int  Count(int[][] mat)
     {
         // code here
-        
+        //date : 21 aug 2023
+        //O(n) time with constant extra space
         var ans = 0;
         int row[] = {-1, -1, 0, 1, 1, 1, 0, -1 };
         int col [] = {0, 1, 1, 1, 0, -1, -1 ,-1};
