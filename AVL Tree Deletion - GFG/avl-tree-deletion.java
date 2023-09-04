@@ -184,19 +184,19 @@ public class GfG
 
 //User function Template for Java
 
-/*
-class Node
-{
-	int data, height;
-	Node left, right;
-	Node(int x)
-	{
-		data = x;
-		height = 1;
-		left = right = NULL;
-	}
-}
-*/
+
+// class Node
+// {
+// 	int data, height;
+// 	Node left, right;
+// 	Node(int x)
+// 	{
+// 		data = x;
+// 		height = 1;
+// 		left = right = NULL;
+// 	}
+// }
+
 class Sol
 {
     Node root; // Instance variable to store the root of the AVL tree
